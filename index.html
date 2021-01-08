@@ -76,9 +76,41 @@
       .pl-0 {
         padding-left: 0 !important;
       }
+      @media (max-width: 768px) {
+        .course-image {
+          max-height: 200px;
+        }
+      }
+      @media (min-width: 768px) {
+        .border-md-transparent {
+          border-color: transparent !important;
+        }
+      }
+      @media (max-width: 992px) {
+        .cover-map-with-faces {
+          position: absolute;
+          height: 100px;
+          top: 30%;
+          right: 10%;
+        }
+        .cover-label {
+          top: -15px;
+        }
+      }
+      @media (min-width: 992px) {
+        .cover {
+          background: url("images/home-cover.png") no-repeat scroll 0px 100% /
+            cover transparent;
+          height: 100vh;
+        }
+        .cover-map-with-faces {
+          width: 458px;
+          height: 446px;
+        }
+      }
     </style>
   </head>
-  <body class="text-primary" style="max-width: 1300px">
+  <body class="text-primary mx-auto" style="max-width: 1500px">
     <header
       class="fixed-top d-flex flex-column flex-md-row align-items-center p-1 px-md-4 mb-3 bg-white border-bottom shadow-sm"
     >
@@ -105,7 +137,10 @@
               <span class="navbar-toggler-icon"></span>
             </button>
           </div>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            class="collapse navbar-collapse w-auto"
+            id="navbarSupportedContent"
+          >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link text-reset" href="#">Courses</a>
@@ -144,14 +179,15 @@
     </header>
     <main class="" style="margin-top: 72px">
       <!-- background cover section -->
-      <section
-        class="vh-100 pt-5 px-4 row justify-content-between"
-        style="
-          background: url('images/home-cover.png') no-repeat scroll 0px 100% /
-            cover transparent;
-        "
-      >
-        <div class="col-12 col-md-5 col-lg-4">
+      <section class="pt-lg-5 px-lg-4 row justify-content-between cover">
+        <div class="col-12 px-0 d-block d-lg-none">
+          <img
+            src="images/home-cover.png"
+            class="w-100"
+            style="object-fit: cover"
+          />
+        </div>
+        <div class="col-12 col-lg-4 position-relative cover-label">
           <div class="card p-5">
             <h1 class="text-primary">
               Find the right course at the right university
@@ -185,19 +221,24 @@
             </div>
           </div>
         </div>
-        <div class="col-auto mt-3 pt-5">
-          <img src="images/africa-group-faces.svg" />
+        <div class="col-auto pb-5 pb-lg-0 mt-lg-3 pt-lg-5">
+          <img
+            src="images/africa-group-faces.svg"
+            class="cover-map-with-faces"
+          />
         </div>
       </section>
       <!-- trending courses section -->
       <section class="bg-default p-5">
-        <div class="row justify-content-between">
-          <h3 class="col p-0">
-            Trending courses near you in
-            <div class="btn-group">
+        <div class="row gy-3 justify-content-between">
+          <h3 class="col-12 col-md p-0 row align-items-md-center">
+            <span class="col-12 col-md-auto mb-3"
+              >Trending courses near you in</span
+            >
+            <div class="btn-group col-12 col-md-auto mb-3">
               <button
                 type="button"
-                class="btn text-primary dropdown-toggle"
+                class="btn text-primary text-start text-md-center dropdown-toggle border-primary border-md-transparent"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
@@ -214,7 +255,7 @@
               </ul>
             </div>
           </h3>
-          <div class="col-auto">
+          <div class="col-12 col-md-auto mb-3 mt-0">
             <button type="button" class="btn bg-white btn-lg">
               <img src="images/filter.svg" /> Filter
             </button>
@@ -227,6 +268,7 @@
               <div class="p-0 col-12 col-md-auto position-relative">
                 <img
                   src="images/course.jpg"
+                  class="course-image"
                   style="height: 100%; width: 100%"
                 />
                 <img
@@ -234,6 +276,12 @@
                   class="position-absolute m-2 p-1 bg-primary rounded"
                   style="top: 0; left: 0"
                 />
+                <div
+                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                  style="bottom: -1rem; right: 20px"
+                >
+                  Scholarship
+                </div>
               </div>
               <div class="col p-3 row justify-content-around">
                 <div class="col-12 col-md-6">
@@ -248,7 +296,7 @@
                     do eiusmod tempor incididunt ut labore et dolore magna.
                   </p>
                   <div
-                    class="btn rounded-pill"
+                    class="btn rounded-pill d-none d-md-inline-block"
                     style="color: #ec671b; background-color: #ec671b33"
                   >
                     Scholarship
@@ -280,6 +328,7 @@
               <div class="p-0 col-12 col-md-auto position-relative">
                 <img
                   src="images/course.jpg"
+                  class="course-image"
                   style="height: 100%; width: 100%"
                 />
                 <img
@@ -287,6 +336,12 @@
                   class="position-absolute m-2 p-1 bg-primary rounded"
                   style="top: 0; left: 0"
                 />
+                <div
+                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                  style="bottom: -1rem; right: 20px"
+                >
+                  Scholarship
+                </div>
               </div>
               <div class="col p-3 row justify-content-around">
                 <div class="col-12 col-md-6">
@@ -301,7 +356,7 @@
                     do eiusmod tempor incididunt ut labore et dolore magna.
                   </p>
                   <div
-                    class="btn rounded-pill"
+                    class="btn rounded-pill d-none d-md-inline-block"
                     style="color: #ec671b; background-color: #ec671b33"
                   >
                     Scholarship
@@ -333,6 +388,7 @@
               <div class="p-0 col-12 col-md-auto position-relative">
                 <img
                   src="images/course.jpg"
+                  class="course-image"
                   style="height: 100%; width: 100%"
                 />
                 <img
@@ -340,6 +396,12 @@
                   class="position-absolute m-2 p-1 bg-primary rounded"
                   style="top: 0; left: 0"
                 />
+                <div
+                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                  style="bottom: -1rem; right: 20px"
+                >
+                  Scholarship
+                </div>
               </div>
               <div class="col p-3 row justify-content-around">
                 <div class="col-12 col-md-6">
@@ -354,7 +416,7 @@
                     do eiusmod tempor incididunt ut labore et dolore magna.
                   </p>
                   <div
-                    class="btn rounded-pill"
+                    class="btn rounded-pill d-none d-md-inline-block"
                     style="color: #ec671b; background-color: #ec671b33"
                   >
                     Scholarship
@@ -386,6 +448,7 @@
               <div class="p-0 col-12 col-md-auto position-relative">
                 <img
                   src="images/course.jpg"
+                  class="course-image"
                   style="height: 100%; width: 100%"
                 />
                 <img
@@ -393,6 +456,12 @@
                   class="position-absolute m-2 p-1 bg-primary rounded"
                   style="top: 0; left: 0"
                 />
+                <div
+                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                  style="bottom: -1rem; right: 20px"
+                >
+                  Scholarship
+                </div>
               </div>
               <div class="col p-3 row justify-content-around">
                 <div class="col-12 col-md-6">
@@ -407,7 +476,7 @@
                     do eiusmod tempor incididunt ut labore et dolore magna.
                   </p>
                   <div
-                    class="btn rounded-pill"
+                    class="btn rounded-pill d-none d-md-inline-block"
                     style="color: #ec671b; background-color: #ec671b33"
                   >
                     Scholarship
@@ -435,15 +504,16 @@
             </div>
           </div>
         </div>
-        <br />
+        <br class="d-none d-md-block" />
         <div class="text-center">
           <button class="btn btn-primary">
             See All&emsp;<img class="mb-1" src="images/reload.svg" />
           </button>
         </div>
+        <br />
       </section>
       <!-- feature section -->
-      <section class="p-5 row gy-3 bg-light">
+      <section class="p-5 pt-4 row gy-4 bg-light">
         <div class="col-12 col-md">
           <div class="row">
             <div class="col-auto">
@@ -491,7 +561,7 @@
       </section>
       <!-- browse section -->
       <section
-        class="pb-2 px-5 pr-0"
+        class="py-2 px-5 pr-0"
         style="
           background: rgb(241, 241, 241);
           background: linear-gradient(
@@ -503,68 +573,16 @@
           );
         "
       >
-        <div class="p-4 row gy-3 flex-nowrap" style="background: #fdf8de">
+        <div class="p-4 row gy-3" style="background: #fdf8de">
           <div class="col-12 col-md-4 col-lg-3">
             <h4>Browse Top Colleges/ Faculties.</h4>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor.
             </p>
-            <div class="row">
-              <button id="lefty" class="col-auto btn" style="opacity: 0.5">
-                <img src="images/arrow-left.svg" />
-              </button>
-              <button id="righty" class="col-auto btn">
-                <img src="images/arrow-right.svg" />
-              </button>
-            </div>
           </div>
-          <div class="col" style="overflow: hidden; height: 155px">
-            <div
-              id="slider"
-              class="row flex-nowrap"
-              style="overflow-x: auto; overflow-y: hidden; height: 1000px"
-            >
-              <div class="col">
-                <div
-                  class="card card-body align-items-start border-0"
-                  style="width: 150px"
-                >
-                  <img src="images/business.svg" />
-                  <h6>Business</h6>
-                  <small>120 courses</small>
-                </div>
-              </div>
-              <div class="col">
-                <div
-                  class="card card-body align-items-start border-0"
-                  style="width: 150px"
-                >
-                  <img src="images/computing.svg" />
-                  <h6>Computing</h6>
-                  <small>110 courses</small>
-                </div>
-              </div>
-              <div class="col">
-                <div
-                  class="card card-body align-items-start border-0"
-                  style="width: 150px"
-                >
-                  <img src="images/business.svg" />
-                  <h6>Business</h6>
-                  <small>120 courses</small>
-                </div>
-              </div>
-              <div class="col">
-                <div
-                  class="card card-body align-items-start border-0"
-                  style="width: 150px"
-                >
-                  <img src="images/computing.svg" />
-                  <h6>Computing</h6>
-                  <small>110 courses</small>
-                </div>
-              </div>
+          <div class="col-12 col-md">
+            <div class="row gy-3">
               <div class="col">
                 <div
                   class="card card-body align-items-start border-0"
@@ -634,12 +652,14 @@
             );
           "
         >
-          <div
-            class="card card-body bg-light justify-content-center align-items-center"
-          >
-            <h3 class="m-0">
-              I am looking for
-              <div class="btn-group">
+          <div class="card card-body bg-light">
+            <h3
+              class="row m-0 justify-content-md-center align-items-center fs-2"
+            >
+              <span class="col-12 col-md-auto fs-6 fs-md-2"
+                >I am looking for</span
+              >
+              <div class="btn-group col-auto">
                 <button
                   type="button"
                   class="btn bg-default text-primary dropdown-toggle"
@@ -654,8 +674,8 @@
                   </li>
                 </ul>
               </div>
-              courses in
-              <div class="btn-group">
+              <span class="col-12 col-md-auto fs-6 fs-md-2">courses in</span>
+              <div class="btn-group col-auto">
                 <button
                   type="button"
                   class="btn bg-default text-primary dropdown-toggle"
@@ -686,6 +706,7 @@
                 <div class="p-0 col-12 col-md-auto position-relative">
                   <img
                     src="images/course.jpg"
+                    class="course-image"
                     style="height: 100%; width: 100%"
                   />
                   <img
@@ -693,6 +714,12 @@
                     class="position-absolute m-2 p-1 bg-primary rounded"
                     style="top: 0; left: 0"
                   />
+                  <div
+                    class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                    style="bottom: -1rem; right: 20px"
+                  >
+                    Scholarship
+                  </div>
                 </div>
                 <div class="col p-3 row justify-content-around">
                   <div class="col-12 col-md-6">
@@ -708,7 +735,7 @@
                       magna.
                     </p>
                     <div
-                      class="btn rounded-pill"
+                      class="btn rounded-pill d-none d-md-inline-block"
                       style="color: #ec671b; background-color: #ec671b33"
                     >
                       Scholarship
@@ -740,6 +767,7 @@
                 <div class="p-0 col-12 col-md-auto position-relative">
                   <img
                     src="images/course.jpg"
+                    class="course-image"
                     style="height: 100%; width: 100%"
                   />
                   <img
@@ -747,6 +775,12 @@
                     class="position-absolute m-2 p-1 bg-primary rounded"
                     style="top: 0; left: 0"
                   />
+                  <div
+                    class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                    style="bottom: -1rem; right: 20px"
+                  >
+                    Scholarship
+                  </div>
                 </div>
                 <div class="col p-3 row justify-content-around">
                   <div class="col-12 col-md-6">
@@ -762,7 +796,7 @@
                       magna.
                     </p>
                     <div
-                      class="btn rounded-pill"
+                      class="btn rounded-pill d-none d-md-inline-block"
                       style="color: #ec671b; background-color: #ec671b33"
                     >
                       Scholarship
@@ -794,6 +828,7 @@
                 <div class="p-0 col-12 col-md-auto position-relative">
                   <img
                     src="images/course.jpg"
+                    class="course-image"
                     style="height: 100%; width: 100%"
                   />
                   <img
@@ -801,6 +836,12 @@
                     class="position-absolute m-2 p-1 bg-primary rounded"
                     style="top: 0; left: 0"
                   />
+                  <div
+                    class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                    style="bottom: -1rem; right: 20px"
+                  >
+                    Scholarship
+                  </div>
                 </div>
                 <div class="col p-3 row justify-content-around">
                   <div class="col-12 col-md-6">
@@ -816,7 +857,7 @@
                       magna.
                     </p>
                     <div
-                      class="btn rounded-pill"
+                      class="btn rounded-pill d-none d-md-inline-block"
                       style="color: #ec671b; background-color: #ec671b33"
                     >
                       Scholarship
@@ -848,6 +889,7 @@
                 <div class="p-0 col-12 col-md-auto position-relative">
                   <img
                     src="images/course.jpg"
+                    class="course-image"
                     style="height: 100%; width: 100%"
                   />
                   <img
@@ -855,6 +897,12 @@
                     class="position-absolute m-2 p-1 bg-primary rounded"
                     style="top: 0; left: 0"
                   />
+                  <div
+                    class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                    style="bottom: -1rem; right: 20px"
+                  >
+                    Scholarship
+                  </div>
                 </div>
                 <div class="col p-3 row justify-content-around">
                   <div class="col-12 col-md-6">
@@ -870,7 +918,7 @@
                       magna.
                     </p>
                     <div
-                      class="btn rounded-pill"
+                      class="btn rounded-pill d-none d-md-inline-block"
                       style="color: #ec671b; background-color: #ec671b33"
                     >
                       Scholarship
@@ -898,7 +946,7 @@
               </div>
             </div>
           </div>
-          <br />
+          <br class="d-none d-md-block" />
           <div class="text-center">
             <button class="btn btn-primary">
               See All&emsp;<img class="mb-1" src="images/reload.svg" />
@@ -1149,38 +1197,5 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
-    <script>
-      const container = document.querySelector("#slider");
-      const lefty = document.querySelector("#lefty");
-      const righty = document.querySelector("#righty");
-      lefty.addEventListener("click", function () {
-        let position = container.scrollLeft;
-        container.scroll({
-          left: (position -= 100),
-          behavior: "smooth",
-        });
-        checkScrollEnd(position);
-      });
-      righty.addEventListener("click", function () {
-        let position = container.scrollLeft;
-        container.scroll({
-          left: (position += 100),
-          behavior: "smooth",
-        });
-        checkScrollEnd(position);
-      });
-      function checkScrollEnd(position) {
-        if (position - 100 <= 0) {
-          lefty.style.opacity = 0.5;
-        } else {
-          lefty.style.opacity = 1;
-        }
-        if (position + 100 >= container.offsetWidth) {
-          righty.style.opacity = 0.5;
-        } else {
-          righty.style.opacity = 1;
-        }
-      }
-    </script>
   </body>
 </html>
