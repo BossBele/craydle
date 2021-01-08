@@ -70,26 +70,77 @@
         padding: 0 5px;
         background-color: #f7e2d9;
       }
+      .pr-0 {
+        padding-right: 0 !important;
+      }
+      .pl-0 {
+        padding-left: 0 !important;
+      }
     </style>
   </head>
-  <body class="text-primary">
+  <body class="text-primary" style="max-width: 1300px">
     <header
-      class="fixed-top d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
+      class="fixed-top d-flex flex-column flex-md-row align-items-center p-1 px-md-4 mb-3 bg-white border-bottom shadow-sm"
     >
-      <p class="h5 my-0 me-md-auto fw-normal"><img src="images/logo.png" /></p>
-      <nav class="my-2 my-md-0 me-md-3">
-        <a class="p-2 text-primary text-decoration-none" href="#">Courses</a>
-        <a class="p-2 text-primary text-decoration-none" href="#"
-          >Universities</a
-        >
-        <a class="p-2 text-primary text-decoration-none" href="#"
-          >Company <img src="images/chevron-down.svg"
-        /></a>
-        <a class="p-2 text-primary text-decoration-none" href="#"
-          >Partner with us</a
-        >
+      <nav class="navbar navbar-expand-md w-100 navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><img src="images/logo.png" /></a>
+          <div class="d-inline-block d-md-none">
+            <button class="btn">
+              <img src="images/search.svg" />
+            </button>
+            <button class="btn btn-primary d-inline-block d-md-none">
+              Apply
+            </button>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-reset" href="#">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-reset" href="#">Universities</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link text-reset dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Company
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Company</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-reset" href="#">Partner with us</a>
+              </li>
+              <button class="btn d-md-inline-block d-none">
+                <img src="images/search.svg" />
+              </button>
+              <button class="btn btn-primary d-md-inline-block d-none">
+                Contact us
+              </button>
+            </ul>
+          </div>
+        </div>
       </nav>
-      <button class="btn btn-primary">Contact us</button>
     </header>
     <main class="" style="margin-top: 72px">
       <!-- background cover section -->
@@ -173,10 +224,10 @@
         <div>
           <div class="card mb-3">
             <div class="row">
-              <div class="p-0 col-auto position-relative">
+              <div class="p-0 col-12 col-md-auto position-relative">
                 <img
                   src="images/course.jpg"
-                  style="object-fit: cover; height: 100%"
+                  style="height: 100%; width: 100%"
                 />
                 <img
                   src="images/university.png"
@@ -185,7 +236,7 @@
                 />
               </div>
               <div class="col p-3 row justify-content-around">
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                   <h6 class="card-title m-0">
                     Bachelor of Business Administration
                   </h6>
@@ -203,7 +254,7 @@
                     Scholarship
                   </div>
                 </div>
-                <div class="col-auto">
+                <div class="col-6 col-md-auto">
                   <div>
                     <h6>University Ranking</h6>
                     <p>#8 in Africa</p>
@@ -213,7 +264,7 @@
                     <p><img src="images/star.svg" /> 4.5</p>
                   </div>
                 </div>
-                <div class="col-auto d-flex align-items-center">
+                <div class="col-6 col-md-auto d-flex align-items-center">
                   <button class="btn btn-outline-primary">
                     Read More&emsp;<img
                       class="mb-1"
@@ -226,10 +277,10 @@
           </div>
           <div class="card mb-3">
             <div class="row">
-              <div class="p-0 col-auto position-relative">
+              <div class="p-0 col-12 col-md-auto position-relative">
                 <img
                   src="images/course.jpg"
-                  style="object-fit: cover; height: 100%"
+                  style="height: 100%; width: 100%"
                 />
                 <img
                   src="images/university.png"
@@ -238,7 +289,7 @@
                 />
               </div>
               <div class="col p-3 row justify-content-around">
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                   <h6 class="card-title m-0">
                     Bachelor of Business Administration
                   </h6>
@@ -256,7 +307,7 @@
                     Scholarship
                   </div>
                 </div>
-                <div class="col-auto">
+                <div class="col-6 col-md-auto">
                   <div>
                     <h6>University Ranking</h6>
                     <p>#8 in Africa</p>
@@ -266,7 +317,7 @@
                     <p><img src="images/star.svg" /> 4.5</p>
                   </div>
                 </div>
-                <div class="col-auto d-flex align-items-center">
+                <div class="col-6 col-md-auto d-flex align-items-center">
                   <button class="btn btn-outline-primary">
                     Read More&emsp;<img
                       class="mb-1"
@@ -279,10 +330,10 @@
           </div>
           <div class="card mb-3">
             <div class="row">
-              <div class="p-0 col-auto position-relative">
+              <div class="p-0 col-12 col-md-auto position-relative">
                 <img
                   src="images/course.jpg"
-                  style="object-fit: cover; height: 100%"
+                  style="height: 100%; width: 100%"
                 />
                 <img
                   src="images/university.png"
@@ -291,7 +342,7 @@
                 />
               </div>
               <div class="col p-3 row justify-content-around">
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                   <h6 class="card-title m-0">
                     Bachelor of Business Administration
                   </h6>
@@ -309,7 +360,7 @@
                     Scholarship
                   </div>
                 </div>
-                <div class="col-auto">
+                <div class="col-6 col-md-auto">
                   <div>
                     <h6>University Ranking</h6>
                     <p>#8 in Africa</p>
@@ -319,7 +370,7 @@
                     <p><img src="images/star.svg" /> 4.5</p>
                   </div>
                 </div>
-                <div class="col-auto d-flex align-items-center">
+                <div class="col-6 col-md-auto d-flex align-items-center">
                   <button class="btn btn-outline-primary">
                     Read More&emsp;<img
                       class="mb-1"
@@ -332,10 +383,10 @@
           </div>
           <div class="card mb-3">
             <div class="row">
-              <div class="p-0 col-auto position-relative">
+              <div class="p-0 col-12 col-md-auto position-relative">
                 <img
                   src="images/course.jpg"
-                  style="object-fit: cover; height: 100%"
+                  style="height: 100%; width: 100%"
                 />
                 <img
                   src="images/university.png"
@@ -344,7 +395,7 @@
                 />
               </div>
               <div class="col p-3 row justify-content-around">
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                   <h6 class="card-title m-0">
                     Bachelor of Business Administration
                   </h6>
@@ -362,7 +413,7 @@
                     Scholarship
                   </div>
                 </div>
-                <div class="col-auto">
+                <div class="col-6 col-md-auto">
                   <div>
                     <h6>University Ranking</h6>
                     <p>#8 in Africa</p>
@@ -372,7 +423,7 @@
                     <p><img src="images/star.svg" /> 4.5</p>
                   </div>
                 </div>
-                <div class="col-auto d-flex align-items-center">
+                <div class="col-6 col-md-auto d-flex align-items-center">
                   <button class="btn btn-outline-primary">
                     Read More&emsp;<img
                       class="mb-1"
@@ -440,7 +491,7 @@
       </section>
       <!-- browse section -->
       <section
-        class="pb-2 px-5"
+        class="pb-2 px-5 pr-0"
         style="
           background: rgb(241, 241, 241);
           background: linear-gradient(
@@ -452,15 +503,120 @@
           );
         "
       >
-        <div class="p-4 row" style="background: #fdf8de">
-          <div class="col">
+        <div class="p-4 row gy-3 flex-nowrap" style="background: #fdf8de">
+          <div class="col-12 col-md-4 col-lg-3">
             <h4>Browse Top Colleges/ Faculties.</h4>
-            <div>
+            <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor.
+            </p>
+            <div class="row">
+              <button id="lefty" class="col-auto btn" style="opacity: 0.5">
+                <img src="images/arrow-left.svg" />
+              </button>
+              <button id="righty" class="col-auto btn">
+                <img src="images/arrow-right.svg" />
+              </button>
             </div>
           </div>
-          <div class="col"></div>
+          <div class="col" style="overflow: hidden; height: 155px">
+            <div
+              id="slider"
+              class="row flex-nowrap"
+              style="overflow-x: auto; overflow-y: hidden; height: 1000px"
+            >
+              <div class="col">
+                <div
+                  class="card card-body align-items-start border-0"
+                  style="width: 150px"
+                >
+                  <img src="images/business.svg" />
+                  <h6>Business</h6>
+                  <small>120 courses</small>
+                </div>
+              </div>
+              <div class="col">
+                <div
+                  class="card card-body align-items-start border-0"
+                  style="width: 150px"
+                >
+                  <img src="images/computing.svg" />
+                  <h6>Computing</h6>
+                  <small>110 courses</small>
+                </div>
+              </div>
+              <div class="col">
+                <div
+                  class="card card-body align-items-start border-0"
+                  style="width: 150px"
+                >
+                  <img src="images/business.svg" />
+                  <h6>Business</h6>
+                  <small>120 courses</small>
+                </div>
+              </div>
+              <div class="col">
+                <div
+                  class="card card-body align-items-start border-0"
+                  style="width: 150px"
+                >
+                  <img src="images/computing.svg" />
+                  <h6>Computing</h6>
+                  <small>110 courses</small>
+                </div>
+              </div>
+              <div class="col">
+                <div
+                  class="card card-body align-items-start border-0"
+                  style="width: 150px"
+                >
+                  <img src="images/business.svg" />
+                  <h6>Business</h6>
+                  <small>120 courses</small>
+                </div>
+              </div>
+              <div class="col">
+                <div
+                  class="card card-body align-items-start border-0"
+                  style="width: 150px"
+                >
+                  <img src="images/computing.svg" />
+                  <h6>Computing</h6>
+                  <small>110 courses</small>
+                </div>
+              </div>
+              <div class="col">
+                <div
+                  class="card card-body align-items-start border-0"
+                  style="width: 150px"
+                >
+                  <img src="images/agriculture.svg" />
+                  <h6>Agriculture</h6>
+                  <small>100 courses</small>
+                </div>
+              </div>
+              <div class="col">
+                <div
+                  class="card card-body align-items-start border-0"
+                  style="width: 150px"
+                >
+                  <img src="images/architecture.svg" />
+                  <h6>Architecture</h6>
+                  <small>120 courses</small>
+                </div>
+              </div>
+              <div class="col">
+                <div
+                  class="card card-body align-items-start border-0"
+                  style="width: 150px"
+                >
+                  <img src="images/education.svg" />
+                  <h6>Education</h6>
+                  <small>180 courses</small>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <!-- courses search section -->
@@ -507,13 +663,15 @@
                   aria-expanded="false"
                 >
                   <h3 class="d-inline">
-                    <img src="images/business-dark.svg" /> computing
+                    <img src="images/computing.svg" style="height: 24px" />
+                    computing
                   </h3>
                 </button>
                 <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item" href="#"
-                      ><img src="images/business-dark.svg" /> computing</a
+                      ><img src="images/computing.svg" style="height: 24px" />
+                      computing</a
                     >
                   </li>
                 </ul>
@@ -525,10 +683,10 @@
           <div>
             <div class="card mb-3">
               <div class="row">
-                <div class="p-0 col-auto position-relative">
+                <div class="p-0 col-12 col-md-auto position-relative">
                   <img
                     src="images/course.jpg"
-                    style="object-fit: cover; height: 100%"
+                    style="height: 100%; width: 100%"
                   />
                   <img
                     src="images/university.png"
@@ -537,7 +695,7 @@
                   />
                 </div>
                 <div class="col p-3 row justify-content-around">
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <h6 class="card-title m-0">
                       Bachelor of Business Administration
                     </h6>
@@ -556,7 +714,7 @@
                       Scholarship
                     </div>
                   </div>
-                  <div class="col-auto">
+                  <div class="col-6 col-md-auto">
                     <div>
                       <h6>University Ranking</h6>
                       <p>#8 in Africa</p>
@@ -566,7 +724,7 @@
                       <p><img src="images/star.svg" /> 4.5</p>
                     </div>
                   </div>
-                  <div class="col-auto d-flex align-items-center">
+                  <div class="col-6 col-md-auto d-flex align-items-center">
                     <button class="btn btn-outline-primary">
                       Read More&emsp;<img
                         class="mb-1"
@@ -579,10 +737,10 @@
             </div>
             <div class="card mb-3">
               <div class="row">
-                <div class="p-0 col-auto position-relative">
+                <div class="p-0 col-12 col-md-auto position-relative">
                   <img
                     src="images/course.jpg"
-                    style="object-fit: cover; height: 100%"
+                    style="height: 100%; width: 100%"
                   />
                   <img
                     src="images/university.png"
@@ -591,7 +749,7 @@
                   />
                 </div>
                 <div class="col p-3 row justify-content-around">
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <h6 class="card-title m-0">
                       Bachelor of Business Administration
                     </h6>
@@ -610,7 +768,7 @@
                       Scholarship
                     </div>
                   </div>
-                  <div class="col-auto">
+                  <div class="col-6 col-md-auto">
                     <div>
                       <h6>University Ranking</h6>
                       <p>#8 in Africa</p>
@@ -620,7 +778,7 @@
                       <p><img src="images/star.svg" /> 4.5</p>
                     </div>
                   </div>
-                  <div class="col-auto d-flex align-items-center">
+                  <div class="col-6 col-md-auto d-flex align-items-center">
                     <button class="btn btn-outline-primary">
                       Read More&emsp;<img
                         class="mb-1"
@@ -633,10 +791,10 @@
             </div>
             <div class="card mb-3">
               <div class="row">
-                <div class="p-0 col-auto position-relative">
+                <div class="p-0 col-12 col-md-auto position-relative">
                   <img
                     src="images/course.jpg"
-                    style="object-fit: cover; height: 100%"
+                    style="height: 100%; width: 100%"
                   />
                   <img
                     src="images/university.png"
@@ -645,7 +803,7 @@
                   />
                 </div>
                 <div class="col p-3 row justify-content-around">
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <h6 class="card-title m-0">
                       Bachelor of Business Administration
                     </h6>
@@ -664,7 +822,7 @@
                       Scholarship
                     </div>
                   </div>
-                  <div class="col-auto">
+                  <div class="col-6 col-md-auto">
                     <div>
                       <h6>University Ranking</h6>
                       <p>#8 in Africa</p>
@@ -674,7 +832,7 @@
                       <p><img src="images/star.svg" /> 4.5</p>
                     </div>
                   </div>
-                  <div class="col-auto d-flex align-items-center">
+                  <div class="col-6 col-md-auto d-flex align-items-center">
                     <button class="btn btn-outline-primary">
                       Read More&emsp;<img
                         class="mb-1"
@@ -687,10 +845,10 @@
             </div>
             <div class="card mb-3">
               <div class="row">
-                <div class="p-0 col-auto position-relative">
+                <div class="p-0 col-12 col-md-auto position-relative">
                   <img
                     src="images/course.jpg"
-                    style="object-fit: cover; height: 100%"
+                    style="height: 100%; width: 100%"
                   />
                   <img
                     src="images/university.png"
@@ -699,7 +857,7 @@
                   />
                 </div>
                 <div class="col p-3 row justify-content-around">
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <h6 class="card-title m-0">
                       Bachelor of Business Administration
                     </h6>
@@ -718,7 +876,7 @@
                       Scholarship
                     </div>
                   </div>
-                  <div class="col-auto">
+                  <div class="col-6 col-md-auto">
                     <div>
                       <h6>University Ranking</h6>
                       <p>#8 in Africa</p>
@@ -728,7 +886,7 @@
                       <p><img src="images/star.svg" /> 4.5</p>
                     </div>
                   </div>
-                  <div class="col-auto d-flex align-items-center">
+                  <div class="col-6 col-md-auto d-flex align-items-center">
                     <button class="btn btn-outline-primary">
                       Read More&emsp;<img
                         class="mb-1"
@@ -750,7 +908,7 @@
       </section>
       <!-- inquiry section -->
       <section
-        class="p-5"
+        class="py-5 px-md-5 pb-0 pb-md-5"
         style="
           background: rgb(241, 241, 241);
           background: linear-gradient(
@@ -762,22 +920,37 @@
           );
         "
       >
-        <div class="row p-4" style="background-color: #f7e2d9">
+        <div
+          class="row p-5 p-md-4 position-relative"
+          style="background-color: #f7e2d9"
+        >
           <div class="col-md-5 text-center">
             <img
               src="images/africa-group-faces-dark.svg"
+              class="d-none d-md-block"
               style="max-height: 300px"
             />
+            <img
+              src="images/africa-group-faces-dark.svg"
+              class="d-block d-md-none position-absolute p-2 m-2"
+              style="height: 100px; right: 0; top: 0"
+            />
           </div>
-          <div class="col-md-7">
+          <div class="col-12 col-md-7">
             <form class="row gy-3">
-              <h3 class="col-12">Interested in a course or have a question?</h3>
-              <div class="col-md-6 position-relative">
+              <h3 class="col-10 col-md-12">
+                Interested in a course or have a question?
+              </h3>
+              <div class="col-12 position-relative">
                 <label>Full Name</label>
                 <input class="form-control bg-transparent" />
               </div>
               <div class="col-md-6 position-relative">
                 <label>Email Address</label>
+                <input class="form-control bg-transparent" />
+              </div>
+              <div class="col-md-6 position-relative">
+                <label>Phone Number</label>
                 <input class="form-control bg-transparent" />
               </div>
               <div class="col-md-6 position-relative">
@@ -811,11 +984,11 @@
           <img src="images/logo-white.png" />
           <img
             src="images/left-intersect.svg"
-            class="position-absolute"
+            class="position-absolute d-none d-md-block"
             style="left: 0; bottom: 0; height: calc(100% - 3rem)"
           />
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 order-1 order-md-0">
           <div class="row">
             <div class="col-6 col-md">
               <h6>Company</h6>
@@ -885,9 +1058,36 @@
                 </li>
               </ul>
             </div>
+            <div
+              class="col-6 d-flex justify-content-around d-md-none align-items-start"
+            >
+              <img src="images/facebook.svg" />
+              <img src="images/twitter.svg" />
+              <img src="images/youtube.svg" />
+              <img src="images/instagram.svg" />
+            </div>
+            <div class="col-12 d-block d-md-none">
+              <div class="btn-group">
+                <button
+                  type="button"
+                  class="btn text-white dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img src="images/kenya.svg" /> Kenya
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><img src="images/kenya.svg" /> Kenya</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-6 col-md">
+        <div class="col-12 col-md order-0 order-md-1">
           <h6>Stay Updated</h6>
           <div class="input-group input-group-lg mb-3">
             <input
@@ -903,7 +1103,7 @@
           </div>
           <img
             src="images/right-intersect.svg"
-            class="position-absolute"
+            class="position-absolute d-none d-md-block"
             style="right: 0; top: 0; height: calc(100% - 6rem)"
           />
         </div>
@@ -912,7 +1112,7 @@
         class="row align-items-center w-100 mx-auto py-2"
         style="background-color: var(--dark)"
       >
-        <div class="col col-md-2">
+        <div class="col col-md-2 d-none d-md-block">
           <div class="btn-group">
             <button
               type="button"
@@ -931,8 +1131,12 @@
             </ul>
           </div>
         </div>
-        <div class="col">&copy; Copyright 2020 | All Rights Reserved</div>
-        <div class="col col-md-3 col-lg-2 d-flex justify-content-around">
+        <div class="col-12 col-md text-center text-md-start">
+          &copy; Copyright 2020 | All Rights Reserved
+        </div>
+        <div
+          class="col col-md-3 col-lg-2 d-md-flex justify-content-around d-none"
+        >
           <img src="images/facebook.svg" />
           <img src="images/twitter.svg" />
           <img src="images/youtube.svg" />
@@ -945,5 +1149,38 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const container = document.querySelector("#slider");
+      const lefty = document.querySelector("#lefty");
+      const righty = document.querySelector("#righty");
+      lefty.addEventListener("click", function () {
+        let position = container.scrollLeft;
+        container.scroll({
+          left: (position -= 100),
+          behavior: "smooth",
+        });
+        checkScrollEnd(position);
+      });
+      righty.addEventListener("click", function () {
+        let position = container.scrollLeft;
+        container.scroll({
+          left: (position += 100),
+          behavior: "smooth",
+        });
+        checkScrollEnd(position);
+      });
+      function checkScrollEnd(position) {
+        if (position - 100 <= 0) {
+          lefty.style.opacity = 0.5;
+        } else {
+          lefty.style.opacity = 1;
+        }
+        if (position + 100 >= container.offsetWidth) {
+          righty.style.opacity = 0.5;
+        } else {
+          righty.style.opacity = 1;
+        }
+      }
+    </script>
   </body>
 </html>
