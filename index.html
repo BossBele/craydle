@@ -10,6 +10,15 @@
       crossorigin="anonymous"
     />
     <title>Craydle</title>
+    <style>
+      :root {
+        --primary: #18244f;
+        --dark: #0e1636;
+      }
+      .text-primary {
+        color: var(--primary) !important;
+      }
+    </style>
   </head>
   <body>
     <header
@@ -17,79 +26,209 @@
     >
       <p class="h5 my-0 me-md-auto fw-normal"><img src="images/logo.png" /></p>
       <nav class="my-2 my-md-0 me-md-3">
-        <a class="p-2 text-dark" href="#">Features</a>
-        <a class="p-2 text-dark" href="#">Enterprise</a>
-        <a class="p-2 text-dark" href="#">Support</a>
-        <a class="p-2 text-dark" href="#">Pricing</a>
+        <a class="p-2 text-primary text-decoration-none" href="#">Courses</a>
+        <a class="p-2 text-primary text-decoration-none" href="#"
+          >Universities</a
+        >
+        <a class="p-2 text-primary text-decoration-none" href="#"
+          >Company <img src="images/chevron-down.svg"
+        /></a>
+        <a class="p-2 text-primary text-decoration-none" href="#"
+          >Partner with us</a
+        >
       </nav>
-      <a class="btn btn-outline-primary" href="#">Sign up</a>
+      <button class="btn text-white" style="background-color: var(--primary)">
+        Contact us
+      </button>
     </header>
-    <main class="py-5">
-      <div style="height: 1000px"></div>
+    <main class="" style="margin-top: 72px">
+      <section
+        class="vh-100 pt-5 px-4 row w-100 mx-auto justify-content-between"
+        style="
+          background: url('images/home-cover.png') no-repeat scroll 0px 100% /
+            cover transparent;
+        "
+      >
+        <div class="col-12 col-md-5 col-lg-4">
+          <div class="card p-5">
+            <h1 class="text-primary">
+              Find the right course at the right university
+            </h1>
+            <br />
+            <p class="text-primary">
+              Access education that prepares you for more than just career but
+              also for your life.
+            </p>
+            <br />
+            <div class="input-group input-group-lg mb-3">
+              <input
+                style="
+                  font-size: 16px;
+                  border-color: var(--primary);
+                  border-right: 0 solid transparent;
+                "
+                class="form-control p-3"
+                placeholder="Search course or university"
+                aria-label="Search course or university"
+                aria-describedby="button-addon2"
+              />
+              <button
+                style="
+                  border-top: 1px solid var(--primary);
+                  border-right: 1px solid var(--primary);
+                  border-bottom: 1px solid var(--primary);
+                "
+                class="btn btn-link border-left-0"
+                type="button"
+                id="button-addon2"
+              >
+                <img src="images/search.svg" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto mt-3 pt-5">
+          <img src="images/africa-group-faces.svg" />
+        </div>
+      </section>
     </main>
-    <footer class="container py-5">
-      <div class="row">
-        <div class="col-12 col-md">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="d-block mb-2"
-            role="img"
-            viewBox="0 0 24 24"
-          >
-            <title>Product</title>
-            <circle cx="12" cy="12" r="10"></circle>
-            <path
-              d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
-            ></path>
-          </svg>
-          <small class="d-block mb-3 text-muted">© 2017-2020</small>
+    <footer class="text-white">
+      <section
+        class="row w-100 mx-auto py-4 px-5 position-relative"
+        style="background-color: var(--primary)"
+      >
+        <div class="col-12 col-md-3">
+          <img src="images/logo-white.png" />
+          <img
+            src="images/left-intersect.svg"
+            class="position-absolute"
+            style="left: 0; bottom: 0; height: calc(100% - 3rem)"
+          />
+        </div>
+        <div class="col-12 col-md-6 row mx-auto">
+          <div class="col-6 col-md">
+            <h6>Company</h6>
+            <ul class="list-unstyled text-small">
+              <li>
+                <a class="text-reset text-decoration-none" href="#">About Us</a>
+              </li>
+              <li>
+                <a class="text-reset text-decoration-none" href="#">Contact</a>
+              </li>
+              <li>
+                <a class="text-reset text-decoration-none" href="#">Careers</a>
+              </li>
+              <li>
+                <a class="text-reset text-decoration-none" href="#"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a class="text-reset text-decoration-none" href="#"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h6>For Students</h6>
+            <ul class="list-unstyled text-small">
+              <li>
+                <a class="text-reset text-decoration-none" href="#">Courses</a>
+              </li>
+              <li>
+                <a class="text-reset text-decoration-none" href="#"
+                  >Universities</a
+                >
+              </li>
+              <li>
+                <a class="text-reset text-decoration-none" href="#">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h6>For Universities</h6>
+            <ul class="list-unstyled text-small">
+              <li>
+                <a class="text-reset text-decoration-none" href="#"
+                  >Become a Partner</a
+                >
+              </li>
+              <li>
+                <a class="text-reset text-decoration-none" href="#"
+                  >Request an Update</a
+                >
+              </li>
+              <li>
+                <a class="text-reset text-decoration-none" href="#"
+                  >Customer Support</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="col-6 col-md">
-          <h5>Features</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="link-secondary" href="#">Cool stuff</a></li>
-            <li><a class="link-secondary" href="#">Random feature</a></li>
-            <li><a class="link-secondary" href="#">Team feature</a></li>
-            <li><a class="link-secondary" href="#">Stuff for developers</a></li>
-            <li><a class="link-secondary" href="#">Another one</a></li>
-            <li><a class="link-secondary" href="#">Last time</a></li>
-          </ul>
+          <h6>Stay Updated</h6>
+          <div class="input-group input-group-lg mb-3">
+            <input
+              style="font-size: 14px"
+              class="form-control p-4 border-0"
+              placeholder="Stay in the loop  - drop us your email"
+              aria-label="Stay in the loop  - drop us your email"
+              aria-describedby="basic-addon2"
+            />
+            <span class="input-group-text pr-4 bg-white" id="basic-addon2"
+              ><button
+                class="btn text-white"
+                style="background-color: var(--primary)"
+              >
+                Subscribe
+              </button></span
+            >
+          </div>
+          <img
+            src="images/right-intersect.svg"
+            class="position-absolute"
+            style="right: 0; top: 0; height: calc(100% - 6rem)"
+          />
         </div>
-        <div class="col-6 col-md">
-          <h5>Resources</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="link-secondary" href="#">Resource name</a></li>
-            <li><a class="link-secondary" href="#">Resource</a></li>
-            <li><a class="link-secondary" href="#">Another resource</a></li>
-            <li><a class="link-secondary" href="#">Final resource</a></li>
-          </ul>
+      </section>
+      <section
+        class="row align-items-center w-100 mx-auto py-2"
+        style="background-color: var(--dark)"
+      >
+        <div class="col col-md-2">
+          <div class="btn-group">
+            <button
+              type="button"
+              class="btn text-white dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="images/kenya.svg" /> Kenya
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><img src="images/kenya.svg" /> Kenya</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="col-6 col-md">
-          <h5>Resources</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="link-secondary" href="#">Business</a></li>
-            <li><a class="link-secondary" href="#">Education</a></li>
-            <li><a class="link-secondary" href="#">Government</a></li>
-            <li><a class="link-secondary" href="#">Gaming</a></li>
-          </ul>
+        <div class="col">&copy; Copyright 2020 | All Rights Reserved</div>
+        <div class="col col-md-3 col-lg-2 d-flex justify-content-around">
+          <img src="images/facebook.svg" />
+          <img src="images/twitter.svg" />
+          <img src="images/youtube.svg" />
+          <img src="images/instagram.svg" />
         </div>
-        <div class="col-6 col-md">
-          <h5>About</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="link-secondary" href="#">Team</a></li>
-            <li><a class="link-secondary" href="#">Locations</a></li>
-            <li><a class="link-secondary" href="#">Privacy</a></li>
-            <li><a class="link-secondary" href="#">Terms</a></li>
-          </ul>
-        </div>
-      </div>
+      </section>
     </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
