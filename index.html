@@ -14,13 +14,65 @@
       :root {
         --primary: #18244f;
         --dark: #0e1636;
+        --light: #fafafa;
+        --default: #f1f1f1;
+      }
+      .bg-primary {
+        background-color: var(--primary) !important;
       }
       .text-primary {
         color: var(--primary) !important;
       }
+      .bg-light {
+        background-color: var(--light);
+      }
+      .bg-default {
+        background-color: var(--default);
+      }
+      .border-primary,
+      input,
+      select,
+      textarea {
+        border-color: var(--primary) !important;
+      }
+      .btn-outline-primary {
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+      .btn-outline-primary:hover,
+      .btn-outline-primary:active {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+      .btn-primary:hover,
+      .btn-primary:active {
+        background-color: var(--dark);
+        border-color: var(--dark);
+      }
+      .row {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 100%;
+      }
+      textarea {
+        resize: none;
+      }
+      label {
+        font-size: 11px;
+        position: absolute;
+        top: -7px;
+        left: 20px;
+        padding: 0 5px;
+        background-color: #f7e2d9;
+      }
     </style>
   </head>
-  <body>
+  <body class="text-primary">
     <header
       class="fixed-top d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
     >
@@ -37,13 +89,12 @@
           >Partner with us</a
         >
       </nav>
-      <button class="btn text-white" style="background-color: var(--primary)">
-        Contact us
-      </button>
+      <button class="btn btn-primary">Contact us</button>
     </header>
     <main class="" style="margin-top: 72px">
+      <!-- background cover section -->
       <section
-        class="vh-100 pt-5 px-4 row w-100 mx-auto justify-content-between"
+        class="vh-100 pt-5 px-4 row justify-content-between"
         style="
           background: url('images/home-cover.png') no-repeat scroll 0px 100% /
             cover transparent;
@@ -62,12 +113,8 @@
             <br />
             <div class="input-group input-group-lg mb-3">
               <input
-                style="
-                  font-size: 16px;
-                  border-color: var(--primary);
-                  border-right: 0 solid transparent;
-                "
-                class="form-control p-3"
+                style="font-size: 16px; border-right: 0 solid transparent"
+                class="form-control border-primary p-3"
                 placeholder="Search course or university"
                 aria-label="Search course or university"
                 aria-describedby="button-addon2"
@@ -91,12 +138,675 @@
           <img src="images/africa-group-faces.svg" />
         </div>
       </section>
+      <!-- trending courses section -->
+      <section class="bg-default p-5">
+        <div class="row justify-content-between">
+          <h3 class="col p-0">
+            Trending courses near you in
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn text-primary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <h3 class="d-inline">
+                  <img src="images/business-dark.svg" /> business
+                </h3>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><img src="images/business-dark.svg" /> business</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </h3>
+          <div class="col-auto">
+            <button type="button" class="btn bg-white btn-lg">
+              <img src="images/filter.svg" /> Filter
+            </button>
+          </div>
+        </div>
+        <br />
+        <div>
+          <div class="card mb-3">
+            <div class="row">
+              <div class="p-0 col-auto position-relative">
+                <img
+                  src="images/course.jpg"
+                  style="object-fit: cover; height: 100%"
+                />
+                <img
+                  src="images/university.png"
+                  class="position-absolute m-2 p-1 bg-primary rounded"
+                  style="top: 0; left: 0"
+                />
+              </div>
+              <div class="col p-3 row justify-content-around">
+                <div class="col-md-6">
+                  <h6 class="card-title m-0">
+                    Bachelor of Business Administration
+                  </h6>
+                  <small class="card-subtitle mb-2">
+                    Kenyatta University • 3 years
+                  </small>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna.
+                  </p>
+                  <div
+                    class="btn rounded-pill"
+                    style="color: #ec671b; background-color: #ec671b33"
+                  >
+                    Scholarship
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div>
+                    <h6>University Ranking</h6>
+                    <p>#8 in Africa</p>
+                  </div>
+                  <div>
+                    <h6>Course Rating</h6>
+                    <p><img src="images/star.svg" /> 4.5</p>
+                  </div>
+                </div>
+                <div class="col-auto d-flex align-items-center">
+                  <button class="btn btn-outline-primary">
+                    Read More&emsp;<img
+                      class="mb-1"
+                      src="images/chevron-right.svg"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="row">
+              <div class="p-0 col-auto position-relative">
+                <img
+                  src="images/course.jpg"
+                  style="object-fit: cover; height: 100%"
+                />
+                <img
+                  src="images/university.png"
+                  class="position-absolute m-2 p-1 bg-primary rounded"
+                  style="top: 0; left: 0"
+                />
+              </div>
+              <div class="col p-3 row justify-content-around">
+                <div class="col-md-6">
+                  <h6 class="card-title m-0">
+                    Bachelor of Business Administration
+                  </h6>
+                  <small class="card-subtitle mb-2">
+                    Kenyatta University • 3 years
+                  </small>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna.
+                  </p>
+                  <div
+                    class="btn rounded-pill"
+                    style="color: #ec671b; background-color: #ec671b33"
+                  >
+                    Scholarship
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div>
+                    <h6>University Ranking</h6>
+                    <p>#8 in Africa</p>
+                  </div>
+                  <div>
+                    <h6>Course Rating</h6>
+                    <p><img src="images/star.svg" /> 4.5</p>
+                  </div>
+                </div>
+                <div class="col-auto d-flex align-items-center">
+                  <button class="btn btn-outline-primary">
+                    Read More&emsp;<img
+                      class="mb-1"
+                      src="images/chevron-right.svg"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="row">
+              <div class="p-0 col-auto position-relative">
+                <img
+                  src="images/course.jpg"
+                  style="object-fit: cover; height: 100%"
+                />
+                <img
+                  src="images/university.png"
+                  class="position-absolute m-2 p-1 bg-primary rounded"
+                  style="top: 0; left: 0"
+                />
+              </div>
+              <div class="col p-3 row justify-content-around">
+                <div class="col-md-6">
+                  <h6 class="card-title m-0">
+                    Bachelor of Business Administration
+                  </h6>
+                  <small class="card-subtitle mb-2">
+                    Kenyatta University • 3 years
+                  </small>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna.
+                  </p>
+                  <div
+                    class="btn rounded-pill"
+                    style="color: #ec671b; background-color: #ec671b33"
+                  >
+                    Scholarship
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div>
+                    <h6>University Ranking</h6>
+                    <p>#8 in Africa</p>
+                  </div>
+                  <div>
+                    <h6>Course Rating</h6>
+                    <p><img src="images/star.svg" /> 4.5</p>
+                  </div>
+                </div>
+                <div class="col-auto d-flex align-items-center">
+                  <button class="btn btn-outline-primary">
+                    Read More&emsp;<img
+                      class="mb-1"
+                      src="images/chevron-right.svg"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="row">
+              <div class="p-0 col-auto position-relative">
+                <img
+                  src="images/course.jpg"
+                  style="object-fit: cover; height: 100%"
+                />
+                <img
+                  src="images/university.png"
+                  class="position-absolute m-2 p-1 bg-primary rounded"
+                  style="top: 0; left: 0"
+                />
+              </div>
+              <div class="col p-3 row justify-content-around">
+                <div class="col-md-6">
+                  <h6 class="card-title m-0">
+                    Bachelor of Business Administration
+                  </h6>
+                  <small class="card-subtitle mb-2">
+                    Kenyatta University • 3 years
+                  </small>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna.
+                  </p>
+                  <div
+                    class="btn rounded-pill"
+                    style="color: #ec671b; background-color: #ec671b33"
+                  >
+                    Scholarship
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div>
+                    <h6>University Ranking</h6>
+                    <p>#8 in Africa</p>
+                  </div>
+                  <div>
+                    <h6>Course Rating</h6>
+                    <p><img src="images/star.svg" /> 4.5</p>
+                  </div>
+                </div>
+                <div class="col-auto d-flex align-items-center">
+                  <button class="btn btn-outline-primary">
+                    Read More&emsp;<img
+                      class="mb-1"
+                      src="images/chevron-right.svg"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="text-center">
+          <button class="btn btn-primary">
+            See All&emsp;<img class="mb-1" src="images/reload.svg" />
+          </button>
+        </div>
+      </section>
+      <!-- feature section -->
+      <section class="p-5 row gy-3 bg-light">
+        <div class="col-12 col-md">
+          <div class="row">
+            <div class="col-auto">
+              <img src="images/inquire.svg" />
+            </div>
+            <div class="col">
+              <div><b>Inquire</b></div>
+              about any course
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md">
+          <div class="row">
+            <div class="col-auto">
+              <img src="images/call.svg" />
+            </div>
+            <div class="col">
+              <div><b>We will call you back</b></div>
+              and help you get started
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md">
+          <div class="row">
+            <div class="col-auto">
+              <img src="images/fill-form.svg" />
+            </div>
+            <div class="col">
+              <div><b>Fill in application</b></div>
+              and wait for admission letter
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md">
+          <div class="row">
+            <div class="col-auto">
+              <img src="images/enroll.svg" />
+            </div>
+            <div class="col">
+              <div><b>Get enrolled</b></div>
+              and build your career
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- browse section -->
+      <section
+        class="pb-2 px-5"
+        style="
+          background: rgb(241, 241, 241);
+          background: linear-gradient(
+            to bottom,
+            var(--light) 0%,
+            var(--light) 50%,
+            rgba(255, 255, 255, 1) 50%,
+            rgba(255, 255, 255, 1) 100%
+          );
+        "
+      >
+        <div class="p-4 row" style="background: #fdf8de">
+          <div class="col">
+            <h4>Browse Top Colleges/ Faculties.</h4>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor.
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
+      </section>
+      <!-- courses search section -->
+      <section class="bg-default">
+        <div
+          class="py-4 px-5"
+          style="
+            background: rgb(241, 241, 241);
+            background: linear-gradient(
+              to top,
+              rgba(241, 241, 241, 1) 0%,
+              rgba(241, 241, 241, 1) 50%,
+              rgba(255, 255, 255, 1) 50%,
+              rgba(255, 255, 255, 1) 100%
+            );
+          "
+        >
+          <div
+            class="card card-body bg-light justify-content-center align-items-center"
+          >
+            <h3 class="m-0">
+              I am looking for
+              <div class="btn-group">
+                <button
+                  type="button"
+                  class="btn bg-default text-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <h3 class="d-inline">undergraduate</h3>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">undergraduate</a>
+                  </li>
+                </ul>
+              </div>
+              courses in
+              <div class="btn-group">
+                <button
+                  type="button"
+                  class="btn bg-default text-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <h3 class="d-inline">
+                    <img src="images/business-dark.svg" /> computing
+                  </h3>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><img src="images/business-dark.svg" /> computing</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </h3>
+          </div>
+        </div>
+        <div class="px-5">
+          <div>
+            <div class="card mb-3">
+              <div class="row">
+                <div class="p-0 col-auto position-relative">
+                  <img
+                    src="images/course.jpg"
+                    style="object-fit: cover; height: 100%"
+                  />
+                  <img
+                    src="images/university.png"
+                    class="position-absolute m-2 p-1 bg-primary rounded"
+                    style="top: 0; left: 0"
+                  />
+                </div>
+                <div class="col p-3 row justify-content-around">
+                  <div class="col-md-6">
+                    <h6 class="card-title m-0">
+                      Bachelor of Business Administration
+                    </h6>
+                    <small class="card-subtitle mb-2">
+                      Kenyatta University • 3 years
+                    </small>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore
+                      magna.
+                    </p>
+                    <div
+                      class="btn rounded-pill"
+                      style="color: #ec671b; background-color: #ec671b33"
+                    >
+                      Scholarship
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div>
+                      <h6>University Ranking</h6>
+                      <p>#8 in Africa</p>
+                    </div>
+                    <div>
+                      <h6>Course Rating</h6>
+                      <p><img src="images/star.svg" /> 4.5</p>
+                    </div>
+                  </div>
+                  <div class="col-auto d-flex align-items-center">
+                    <button class="btn btn-outline-primary">
+                      Read More&emsp;<img
+                        class="mb-1"
+                        src="images/chevron-right.svg"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-3">
+              <div class="row">
+                <div class="p-0 col-auto position-relative">
+                  <img
+                    src="images/course.jpg"
+                    style="object-fit: cover; height: 100%"
+                  />
+                  <img
+                    src="images/university.png"
+                    class="position-absolute m-2 p-1 bg-primary rounded"
+                    style="top: 0; left: 0"
+                  />
+                </div>
+                <div class="col p-3 row justify-content-around">
+                  <div class="col-md-6">
+                    <h6 class="card-title m-0">
+                      Bachelor of Business Administration
+                    </h6>
+                    <small class="card-subtitle mb-2">
+                      Kenyatta University • 3 years
+                    </small>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore
+                      magna.
+                    </p>
+                    <div
+                      class="btn rounded-pill"
+                      style="color: #ec671b; background-color: #ec671b33"
+                    >
+                      Scholarship
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div>
+                      <h6>University Ranking</h6>
+                      <p>#8 in Africa</p>
+                    </div>
+                    <div>
+                      <h6>Course Rating</h6>
+                      <p><img src="images/star.svg" /> 4.5</p>
+                    </div>
+                  </div>
+                  <div class="col-auto d-flex align-items-center">
+                    <button class="btn btn-outline-primary">
+                      Read More&emsp;<img
+                        class="mb-1"
+                        src="images/chevron-right.svg"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-3">
+              <div class="row">
+                <div class="p-0 col-auto position-relative">
+                  <img
+                    src="images/course.jpg"
+                    style="object-fit: cover; height: 100%"
+                  />
+                  <img
+                    src="images/university.png"
+                    class="position-absolute m-2 p-1 bg-primary rounded"
+                    style="top: 0; left: 0"
+                  />
+                </div>
+                <div class="col p-3 row justify-content-around">
+                  <div class="col-md-6">
+                    <h6 class="card-title m-0">
+                      Bachelor of Business Administration
+                    </h6>
+                    <small class="card-subtitle mb-2">
+                      Kenyatta University • 3 years
+                    </small>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore
+                      magna.
+                    </p>
+                    <div
+                      class="btn rounded-pill"
+                      style="color: #ec671b; background-color: #ec671b33"
+                    >
+                      Scholarship
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div>
+                      <h6>University Ranking</h6>
+                      <p>#8 in Africa</p>
+                    </div>
+                    <div>
+                      <h6>Course Rating</h6>
+                      <p><img src="images/star.svg" /> 4.5</p>
+                    </div>
+                  </div>
+                  <div class="col-auto d-flex align-items-center">
+                    <button class="btn btn-outline-primary">
+                      Read More&emsp;<img
+                        class="mb-1"
+                        src="images/chevron-right.svg"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-3">
+              <div class="row">
+                <div class="p-0 col-auto position-relative">
+                  <img
+                    src="images/course.jpg"
+                    style="object-fit: cover; height: 100%"
+                  />
+                  <img
+                    src="images/university.png"
+                    class="position-absolute m-2 p-1 bg-primary rounded"
+                    style="top: 0; left: 0"
+                  />
+                </div>
+                <div class="col p-3 row justify-content-around">
+                  <div class="col-md-6">
+                    <h6 class="card-title m-0">
+                      Bachelor of Business Administration
+                    </h6>
+                    <small class="card-subtitle mb-2">
+                      Kenyatta University • 3 years
+                    </small>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore
+                      magna.
+                    </p>
+                    <div
+                      class="btn rounded-pill"
+                      style="color: #ec671b; background-color: #ec671b33"
+                    >
+                      Scholarship
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div>
+                      <h6>University Ranking</h6>
+                      <p>#8 in Africa</p>
+                    </div>
+                    <div>
+                      <h6>Course Rating</h6>
+                      <p><img src="images/star.svg" /> 4.5</p>
+                    </div>
+                  </div>
+                  <div class="col-auto d-flex align-items-center">
+                    <button class="btn btn-outline-primary">
+                      Read More&emsp;<img
+                        class="mb-1"
+                        src="images/chevron-right.svg"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="text-center">
+            <button class="btn btn-primary">
+              See All&emsp;<img class="mb-1" src="images/reload.svg" />
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- inquiry section -->
+      <section
+        class="p-5"
+        style="
+          background: rgb(241, 241, 241);
+          background: linear-gradient(
+            to bottom,
+            rgba(241, 241, 241, 1) 0%,
+            rgba(241, 241, 241, 1) 50%,
+            rgba(255, 255, 255, 1) 50%,
+            rgba(255, 255, 255, 1) 100%
+          );
+        "
+      >
+        <div class="row p-4" style="background-color: #f7e2d9">
+          <div class="col-md-5 text-center">
+            <img
+              src="images/africa-group-faces-dark.svg"
+              style="max-height: 300px"
+            />
+          </div>
+          <div class="col-md-7">
+            <form class="row gy-3">
+              <h3 class="col-12">Interested in a course or have a question?</h3>
+              <div class="col-md-6 position-relative">
+                <label>Full Name</label>
+                <input class="form-control bg-transparent" />
+              </div>
+              <div class="col-md-6 position-relative">
+                <label>Email Address</label>
+                <input class="form-control bg-transparent" />
+              </div>
+              <div class="col-md-6 position-relative">
+                <label>Course</label>
+                <select class="form-select bg-transparent"></select>
+              </div>
+              <div class="col-md-6 position-relative">
+                <label>University</label>
+                <select class="form-select bg-transparent"></select>
+              </div>
+              <div class="col-12 position-relative">
+                <label>Comment</label>
+                <textarea
+                  class="form-control bg-transparent"
+                  rows="1"
+                ></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100">
+                  Send Inquiry
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="text-white">
-      <section
-        class="row w-100 mx-auto py-4 px-5 position-relative"
-        style="background-color: var(--primary)"
-      >
+      <section class="row py-4 px-5 position-relative bg-primary">
         <div class="col-12 col-md-3">
           <img src="images/logo-white.png" />
           <img
@@ -105,66 +815,76 @@
             style="left: 0; bottom: 0; height: calc(100% - 3rem)"
           />
         </div>
-        <div class="col-12 col-md-6 row mx-auto">
-          <div class="col-6 col-md">
-            <h6>Company</h6>
-            <ul class="list-unstyled text-small">
-              <li>
-                <a class="text-reset text-decoration-none" href="#">About Us</a>
-              </li>
-              <li>
-                <a class="text-reset text-decoration-none" href="#">Contact</a>
-              </li>
-              <li>
-                <a class="text-reset text-decoration-none" href="#">Careers</a>
-              </li>
-              <li>
-                <a class="text-reset text-decoration-none" href="#"
-                  >Terms & Conditions</a
-                >
-              </li>
-              <li>
-                <a class="text-reset text-decoration-none" href="#"
-                  >Privacy Policy</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="col-6 col-md">
-            <h6>For Students</h6>
-            <ul class="list-unstyled text-small">
-              <li>
-                <a class="text-reset text-decoration-none" href="#">Courses</a>
-              </li>
-              <li>
-                <a class="text-reset text-decoration-none" href="#"
-                  >Universities</a
-                >
-              </li>
-              <li>
-                <a class="text-reset text-decoration-none" href="#">Blog</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-6 col-md">
-            <h6>For Universities</h6>
-            <ul class="list-unstyled text-small">
-              <li>
-                <a class="text-reset text-decoration-none" href="#"
-                  >Become a Partner</a
-                >
-              </li>
-              <li>
-                <a class="text-reset text-decoration-none" href="#"
-                  >Request an Update</a
-                >
-              </li>
-              <li>
-                <a class="text-reset text-decoration-none" href="#"
-                  >Customer Support</a
-                >
-              </li>
-            </ul>
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="col-6 col-md">
+              <h6>Company</h6>
+              <ul class="list-unstyled text-small">
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Contact</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Careers</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Terms & Conditions</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Privacy Policy</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md">
+              <h6>For Students</h6>
+              <ul class="list-unstyled text-small">
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Courses</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Universities</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#">Blog</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md">
+              <h6>For Universities</h6>
+              <ul class="list-unstyled text-small">
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Become a Partner</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Request an Update</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Customer Support</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="col-6 col-md">
@@ -178,12 +898,7 @@
               aria-describedby="basic-addon2"
             />
             <span class="input-group-text pr-4 bg-white" id="basic-addon2"
-              ><button
-                class="btn text-white"
-                style="background-color: var(--primary)"
-              >
-                Subscribe
-              </button></span
+              ><button class="btn btn-primary">Subscribe</button></span
             >
           </div>
           <img
