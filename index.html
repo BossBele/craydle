@@ -17,9 +17,9 @@
         --light: #fafafa;
         --default: #f1f1f1;
       }
-      body {
+      /* body {
         font-size: 1.2rem;
-      }
+      } */
       .bg-primary {
         background-color: var(--primary) !important;
       }
@@ -83,12 +83,12 @@
         font-size: 3.5rem;
       }
       /* h2 {
-        font-size: 3.5rem
-      }
+        font-size: 3rem
+      } */
       h3 {
-        font-size: 3.5rem
+        font-size: 2.2rem;
       }
-      h4 {
+      /* h4 {
         font-size: 3.5rem
       }
       h5 {
@@ -97,7 +97,15 @@
       h6 {
         font-size: 3.5rem
       }
-      p {} */
+      p {
+      }
+      */
+      .fs-14 {
+        font-size: 14px !important;
+      }
+      .card-title {
+        font-size: 18px;
+      }
       @media (max-width: 768px) {
         .course-image {
           max-height: 200px;
@@ -121,8 +129,8 @@
       }
       @media (min-width: 1200px) {
         .cover {
-          background: url("https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/home-cover.png")
-            no-repeat scroll 0px 100% / cover transparent;
+          background: url("images/home-cover.png") no-repeat scroll 0px 100% /
+            cover transparent;
           height: 100vh;
         }
         .cover-map-with-faces {
@@ -145,15 +153,10 @@
     >
       <nav class="navbar navbar-expand-lg w-100 navbar-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/"
-            ><img
-              src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/logo.png"
-          /></a>
+          <a class="navbar-brand" href="/"><img src="images/logo.png" /></a>
           <div class="d-inline-block d-lg-none">
             <button class="btn">
-              <img
-                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/search.svg"
-              />
+              <img src="images/search.svg" />
             </button>
             <button class="btn btn-primary d-inline-block d-lg-none">
               Apply
@@ -203,18 +206,14 @@
                 <a class="nav-link text-reset" href="#">Partner with us</a>
               </li>
               <button class="btn d-lg-inline-block d-none">
-                <img
-                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/search.svg"
-                />
+                <img src="images/search.svg" />
               </button>
               <button class="btn btn-primary d-lg-inline-block d-none">
                 Apply Now
               </button>
               <li class="nav-item d-flex align-items-center">
                 <div class="btn text-primary">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/phone.svg"
-                  />
+                  <img src="images/phone.svg" />
                 </div>
                 <div>
                   <small>Call us 24/7</small>
@@ -231,7 +230,7 @@
       <section class="pt-xl-5 px-xl-4 row justify-content-between cover">
         <div class="col-12 px-0 d-block d-xl-none">
           <img
-            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/home-cover.png"
+            src="images/home-cover.png"
             class="w-100"
             style="object-fit: cover"
           />
@@ -265,16 +264,14 @@
                 type="button"
                 id="button-addon2"
               >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/search.svg"
-                />
+                <img src="images/search.svg" />
               </button>
             </div>
           </div>
         </div>
         <div class="col-auto pb-5 pb-xl-0 mt-xl-3 pt-xl-5">
           <img
-            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/africa-group-faces.svg"
+            src="images/africa-group-faces.svg"
             class="cover-map-with-faces"
           />
         </div>
@@ -294,19 +291,14 @@
                 aria-expanded="false"
               >
                 <h3 class="d-inline">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/business-dark.svg"
-                  />
+                  <img src="images/business-dark.svg" />
                   business
                 </h3>
               </button>
               <ul class="dropdown-menu">
                 <li>
                   <a class="dropdown-item" href="#"
-                    ><img
-                      src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/business-dark.svg"
-                    />
-                    business</a
+                    ><img src="images/business-dark.svg" /> business</a
                   >
                 </li>
               </ul>
@@ -314,9 +306,7 @@
           </h3>
           <div class="col-12 col-md-auto mb-3 mt-0">
             <button type="button" class="btn bg-white btn-lg">
-              <img
-                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/filter.svg"
-              />
+              <img src="images/filter.svg" />
               Filter
             </button>
           </div>
@@ -327,17 +317,17 @@
             <div class="row">
               <div class="p-0 col-12 col-md-auto col-lg-2 position-relative">
                 <img
-                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/course.jpg"
+                  src="images/course.jpg"
                   class="course-image"
                   style="height: 100%; width: 100%"
                 />
                 <img
-                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/university.png"
+                  src="images/university.png"
                   class="position-absolute m-2 p-1 bg-primary rounded"
                   style="top: 0; left: 0"
                 />
                 <div
-                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute fs-14"
                   style="bottom: -1rem; right: 20px"
                 >
                   Scholarship
@@ -345,33 +335,33 @@
               </div>
               <div class="col p-3 row justify-content-around">
                 <div class="col-12 col-md-6">
-                  <h6 class="card-title m-0">
+                  <h5 class="card-title">
                     Bachelor of Business Administration
+                  </h5>
+                  <h6>
+                    <small class="card-subtitle mb-2">
+                      Kenyatta University • 3 years
+                    </small>
                   </h6>
-                  <small class="card-subtitle mb-2">
-                    Kenyatta University • 3 years
-                  </small>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna.
                   </p>
                   <div
-                    class="btn bg-primary text-white rounded-pill d-none d-md-inline-block"
+                    class="btn bg-primary text-white rounded-pill d-none d-md-inline-block fs-14"
                   >
                     Scholarship
                   </div>
                 </div>
                 <div class="col-6 col-md-auto">
                   <div>
-                    <h6>University Ranking</h6>
+                    <h6 class="fs-14">University Ranking</h6>
                     <p>#8 in Africa</p>
                   </div>
                   <div>
-                    <h6>Course Rating</h6>
+                    <h6 class="fs-14">Course Rating</h6>
                     <p>
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/star.svg"
-                      />
+                      <img src="images/star.svg" />
                       4.5
                     </p>
                   </div>
@@ -380,7 +370,7 @@
                   <button class="btn btn-outline-primary">
                     Read More&emsp;<img
                       class="mb-1"
-                      src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/chevron-right.svg"
+                      src="images/chevron-right.svg"
                     />
                   </button>
                 </div>
@@ -391,17 +381,17 @@
             <div class="row">
               <div class="p-0 col-12 col-md-auto col-lg-2 position-relative">
                 <img
-                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/course.jpg"
+                  src="images/course.jpg"
                   class="course-image"
                   style="height: 100%; width: 100%"
                 />
                 <img
-                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/university.png"
+                  src="images/university.png"
                   class="position-absolute m-2 p-1 bg-primary rounded"
                   style="top: 0; left: 0"
                 />
                 <div
-                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute fs-14"
                   style="bottom: -1rem; right: 20px"
                 >
                   Scholarship
@@ -409,33 +399,33 @@
               </div>
               <div class="col p-3 row justify-content-around">
                 <div class="col-12 col-md-6">
-                  <h6 class="card-title m-0">
+                  <h5 class="card-title">
                     Bachelor of Business Administration
+                  </h5>
+                  <h6>
+                    <small class="card-subtitle mb-2">
+                      Kenyatta University • 3 years
+                    </small>
                   </h6>
-                  <small class="card-subtitle mb-2">
-                    Kenyatta University • 3 years
-                  </small>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna.
                   </p>
                   <div
-                    class="btn bg-primary text-white rounded-pill d-none d-md-inline-block"
+                    class="btn bg-primary text-white rounded-pill d-none d-md-inline-block fs-14"
                   >
                     Scholarship
                   </div>
                 </div>
                 <div class="col-6 col-md-auto">
                   <div>
-                    <h6>University Ranking</h6>
+                    <h6 class="fs-14">University Ranking</h6>
                     <p>#8 in Africa</p>
                   </div>
                   <div>
-                    <h6>Course Rating</h6>
+                    <h6 class="fs-14">Course Rating</h6>
                     <p>
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/star.svg"
-                      />
+                      <img src="images/star.svg" />
                       4.5
                     </p>
                   </div>
@@ -444,7 +434,7 @@
                   <button class="btn btn-outline-primary">
                     Read More&emsp;<img
                       class="mb-1"
-                      src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/chevron-right.svg"
+                      src="images/chevron-right.svg"
                     />
                   </button>
                 </div>
@@ -455,17 +445,17 @@
             <div class="row">
               <div class="p-0 col-12 col-md-auto col-lg-2 position-relative">
                 <img
-                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/course.jpg"
+                  src="images/course.jpg"
                   class="course-image"
                   style="height: 100%; width: 100%"
                 />
                 <img
-                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/university.png"
+                  src="images/university.png"
                   class="position-absolute m-2 p-1 bg-primary rounded"
                   style="top: 0; left: 0"
                 />
                 <div
-                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute fs-14"
                   style="bottom: -1rem; right: 20px"
                 >
                   Scholarship
@@ -473,33 +463,33 @@
               </div>
               <div class="col p-3 row justify-content-around">
                 <div class="col-12 col-md-6">
-                  <h6 class="card-title m-0">
+                  <h5 class="card-title">
                     Bachelor of Business Administration
+                  </h5>
+                  <h6>
+                    <small class="card-subtitle mb-2">
+                      Kenyatta University • 3 years
+                    </small>
                   </h6>
-                  <small class="card-subtitle mb-2">
-                    Kenyatta University • 3 years
-                  </small>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna.
                   </p>
                   <div
-                    class="btn bg-primary text-white rounded-pill d-none d-md-inline-block"
+                    class="btn bg-primary text-white rounded-pill d-none d-md-inline-block fs-14"
                   >
                     Scholarship
                   </div>
                 </div>
                 <div class="col-6 col-md-auto">
                   <div>
-                    <h6>University Ranking</h6>
+                    <h6 class="fs-14">University Ranking</h6>
                     <p>#8 in Africa</p>
                   </div>
                   <div>
-                    <h6>Course Rating</h6>
+                    <h6 class="fs-14">Course Rating</h6>
                     <p>
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/star.svg"
-                      />
+                      <img src="images/star.svg" />
                       4.5
                     </p>
                   </div>
@@ -508,7 +498,7 @@
                   <button class="btn btn-outline-primary">
                     Read More&emsp;<img
                       class="mb-1"
-                      src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/chevron-right.svg"
+                      src="images/chevron-right.svg"
                     />
                   </button>
                 </div>
@@ -519,17 +509,17 @@
             <div class="row">
               <div class="p-0 col-12 col-md-auto col-lg-2 position-relative">
                 <img
-                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/course.jpg"
+                  src="images/course.jpg"
                   class="course-image"
                   style="height: 100%; width: 100%"
                 />
                 <img
-                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/university.png"
+                  src="images/university.png"
                   class="position-absolute m-2 p-1 bg-primary rounded"
                   style="top: 0; left: 0"
                 />
                 <div
-                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute fs-14"
                   style="bottom: -1rem; right: 20px"
                 >
                   Scholarship
@@ -537,33 +527,33 @@
               </div>
               <div class="col p-3 row justify-content-around">
                 <div class="col-12 col-md-6">
-                  <h6 class="card-title m-0">
+                  <h5 class="card-title">
                     Bachelor of Business Administration
+                  </h5>
+                  <h6>
+                    <small class="card-subtitle mb-2">
+                      Kenyatta University • 3 years
+                    </small>
                   </h6>
-                  <small class="card-subtitle mb-2">
-                    Kenyatta University • 3 years
-                  </small>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna.
                   </p>
                   <div
-                    class="btn bg-primary text-white rounded-pill d-none d-md-inline-block"
+                    class="btn bg-primary text-white rounded-pill d-none d-md-inline-block fs-14"
                   >
                     Scholarship
                   </div>
                 </div>
                 <div class="col-6 col-md-auto">
                   <div>
-                    <h6>University Ranking</h6>
+                    <h6 class="fs-14">University Ranking</h6>
                     <p>#8 in Africa</p>
                   </div>
                   <div>
-                    <h6>Course Rating</h6>
+                    <h6 class="fs-14">Course Rating</h6>
                     <p>
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/star.svg"
-                      />
+                      <img src="images/star.svg" />
                       4.5
                     </p>
                   </div>
@@ -572,7 +562,7 @@
                   <button class="btn btn-outline-primary">
                     Read More&emsp;<img
                       class="mb-1"
-                      src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/chevron-right.svg"
+                      src="images/chevron-right.svg"
                     />
                   </button>
                 </div>
@@ -583,10 +573,7 @@
         <br class="d-none d-md-block" />
         <div class="text-center">
           <button class="btn btn-primary">
-            See All&emsp;<img
-              class="mb-1"
-              src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/reload.svg"
-            />
+            See All&emsp;<img class="mb-1" src="images/reload.svg" />
           </button>
         </div>
         <br />
@@ -596,9 +583,7 @@
         <div class="col-12 col-md">
           <div class="row">
             <div class="col-auto">
-              <img
-                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/inquire.svg"
-              />
+              <img src="images/inquire.svg" />
             </div>
             <div class="col">
               <div><b>Inquire</b></div>
@@ -609,9 +594,7 @@
         <div class="col-12 col-md">
           <div class="row">
             <div class="col-auto">
-              <img
-                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/call.svg"
-              />
+              <img src="images/call.svg" />
             </div>
             <div class="col">
               <div><b>We will call you back</b></div>
@@ -622,9 +605,7 @@
         <div class="col-12 col-md">
           <div class="row">
             <div class="col-auto">
-              <img
-                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/fill-form.svg"
-              />
+              <img src="images/fill-form.svg" />
             </div>
             <div class="col">
               <div><b>Fill in application</b></div>
@@ -635,9 +616,7 @@
         <div class="col-12 col-md">
           <div class="row">
             <div class="col-auto">
-              <img
-                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/enroll.svg"
-              />
+              <img src="images/enroll.svg" />
             </div>
             <div class="col">
               <div><b>Get enrolled</b></div>
@@ -647,19 +626,7 @@
         </div>
       </section>
       <!-- browse section -->
-      <section
-        class="py-2 px-5 pr-0"
-        style="
-          background: rgb(241, 241, 241);
-          background: linear-gradient(
-            to bottom,
-            var(--light) 0%,
-            var(--light) 50%,
-            rgba(255, 255, 255, 1) 50%,
-            rgba(255, 255, 255, 1) 100%
-          );
-        "
-      >
+      <section class="py-2 px-5 pr-0" style="background: #fdf8de">
         <div class="p-4 row gy-3" style="background: #fdf8de">
           <div class="col-12 text-center">
             <h3>Browse Top Courses</h3>
@@ -675,9 +642,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/business.png"
-                  />
+                  <img src="images/business.png" />
                   <h6>Business</h6>
                   <small>120 courses</small>
                 </div>
@@ -687,9 +652,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/computing.png"
-                  />
+                  <img src="images/computing.png" />
                   <h6>Computing</h6>
                   <small>110 courses</small>
                 </div>
@@ -699,9 +662,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/agriculture.png"
-                  />
+                  <img src="images/agriculture.png" />
                   <h6>Agriculture</h6>
                   <small>100 courses</small>
                 </div>
@@ -711,9 +672,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/architecture.png"
-                  />
+                  <img src="images/architecture.png" />
                   <h6>Architecture</h6>
                   <small>120 courses</small>
                 </div>
@@ -723,9 +682,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/education.png"
-                  />
+                  <img src="images/education.png" />
                   <h6>Education</h6>
                   <small>180 courses</small>
                 </div>
@@ -735,9 +692,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/business.png"
-                  />
+                  <img src="images/business.png" />
                   <h6>Business</h6>
                   <small>120 courses</small>
                 </div>
@@ -747,9 +702,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/computing.png"
-                  />
+                  <img src="images/computing.png" />
                   <h6>Computing</h6>
                   <small>110 courses</small>
                 </div>
@@ -759,9 +712,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/agriculture.png"
-                  />
+                  <img src="images/agriculture.png" />
                   <h6>Agriculture</h6>
                   <small>100 courses</small>
                 </div>
@@ -771,9 +722,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/architecture.png"
-                  />
+                  <img src="images/architecture.png" />
                   <h6>Architecture</h6>
                   <small>120 courses</small>
                 </div>
@@ -783,9 +732,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/education.png"
-                  />
+                  <img src="images/education.png" />
                   <h6>Education</h6>
                   <small>180 courses</small>
                 </div>
@@ -795,9 +742,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/business.png"
-                  />
+                  <img src="images/business.png" />
                   <h6>Business</h6>
                   <small>120 courses</small>
                 </div>
@@ -807,9 +752,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/computing.png"
-                  />
+                  <img src="images/computing.png" />
                   <h6>Computing</h6>
                   <small>110 courses</small>
                 </div>
@@ -819,9 +762,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/agriculture.png"
-                  />
+                  <img src="images/agriculture.png" />
                   <h6>Agriculture</h6>
                   <small>100 courses</small>
                 </div>
@@ -831,9 +772,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/architecture.png"
-                  />
+                  <img src="images/architecture.png" />
                   <h6>Architecture</h6>
                   <small>120 courses</small>
                 </div>
@@ -843,9 +782,7 @@
                   class="card card-body align-items-start border-0"
                   style="width: 150px"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/education.png"
-                  />
+                  <img src="images/education.png" />
                   <h6>Education</h6>
                   <small>180 courses</small>
                 </div>
@@ -900,20 +837,14 @@
                   aria-expanded="false"
                 >
                   <h3 class="d-inline">
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/computing.svg"
-                      style="height: 24px"
-                    />
+                    <img src="images/computing.svg" style="height: 24px" />
                     computing
                   </h3>
                 </button>
                 <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item" href="#"
-                      ><img
-                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/computing.svg"
-                        style="height: 24px"
-                      />
+                      ><img src="images/computing.svg" style="height: 24px" />
                       computing</a
                     >
                   </li>
@@ -928,17 +859,17 @@
               <div class="row">
                 <div class="p-0 col-12 col-md-auto col-lg-2 position-relative">
                   <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/course.jpg"
+                    src="images/course.jpg"
                     class="course-image"
                     style="height: 100%; width: 100%"
                   />
                   <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/university.png"
+                    src="images/university.png"
                     class="position-absolute m-2 p-1 bg-primary rounded"
                     style="top: 0; left: 0"
                   />
                   <div
-                    class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                    class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute fs-14"
                     style="bottom: -1rem; right: 20px"
                   >
                     Scholarship
@@ -946,34 +877,34 @@
                 </div>
                 <div class="col p-3 row justify-content-around">
                   <div class="col-12 col-md-6">
-                    <h6 class="card-title m-0">
+                    <h5 class="card-title">
                       Bachelor of Business Administration
+                    </h5>
+                    <h6>
+                      <small class="card-subtitle mb-2">
+                        Kenyatta University • 3 years
+                      </small>
                     </h6>
-                    <small class="card-subtitle mb-2">
-                      Kenyatta University • 3 years
-                    </small>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore
                       magna.
                     </p>
                     <div
-                      class="btn bg-primary text-white rounded-pill d-none d-md-inline-block"
+                      class="btn bg-primary text-white rounded-pill d-none d-md-inline-block fs-14"
                     >
                       Scholarship
                     </div>
                   </div>
                   <div class="col-6 col-md-auto">
                     <div>
-                      <h6>University Ranking</h6>
+                      <h6 class="fs-14">University Ranking</h6>
                       <p>#8 in Africa</p>
                     </div>
                     <div>
-                      <h6>Course Rating</h6>
+                      <h6 class="fs-14">Course Rating</h6>
                       <p>
-                        <img
-                          src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/star.svg"
-                        />
+                        <img src="images/star.svg" />
                         4.5
                       </p>
                     </div>
@@ -982,7 +913,7 @@
                     <button class="btn btn-outline-primary">
                       Read More&emsp;<img
                         class="mb-1"
-                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/chevron-right.svg"
+                        src="images/chevron-right.svg"
                       />
                     </button>
                   </div>
@@ -993,17 +924,17 @@
               <div class="row">
                 <div class="p-0 col-12 col-md-auto col-lg-2 position-relative">
                   <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/course.jpg"
+                    src="images/course.jpg"
                     class="course-image"
                     style="height: 100%; width: 100%"
                   />
                   <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/university.png"
+                    src="images/university.png"
                     class="position-absolute m-2 p-1 bg-primary rounded"
                     style="top: 0; left: 0"
                   />
                   <div
-                    class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                    class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute fs-14"
                     style="bottom: -1rem; right: 20px"
                   >
                     Scholarship
@@ -1011,34 +942,34 @@
                 </div>
                 <div class="col p-3 row justify-content-around">
                   <div class="col-12 col-md-6">
-                    <h6 class="card-title m-0">
+                    <h5 class="card-title">
                       Bachelor of Business Administration
+                    </h5>
+                    <h6>
+                      <small class="card-subtitle mb-2">
+                        Kenyatta University • 3 years
+                      </small>
                     </h6>
-                    <small class="card-subtitle mb-2">
-                      Kenyatta University • 3 years
-                    </small>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore
                       magna.
                     </p>
                     <div
-                      class="btn bg-primary text-white rounded-pill d-none d-md-inline-block"
+                      class="btn bg-primary text-white rounded-pill d-none d-md-inline-block fs-14"
                     >
                       Scholarship
                     </div>
                   </div>
                   <div class="col-6 col-md-auto">
                     <div>
-                      <h6>University Ranking</h6>
+                      <h6 class="fs-14">University Ranking</h6>
                       <p>#8 in Africa</p>
                     </div>
                     <div>
-                      <h6>Course Rating</h6>
+                      <h6 class="fs-14">Course Rating</h6>
                       <p>
-                        <img
-                          src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/star.svg"
-                        />
+                        <img src="images/star.svg" />
                         4.5
                       </p>
                     </div>
@@ -1047,7 +978,7 @@
                     <button class="btn btn-outline-primary">
                       Read More&emsp;<img
                         class="mb-1"
-                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/chevron-right.svg"
+                        src="images/chevron-right.svg"
                       />
                     </button>
                   </div>
@@ -1058,17 +989,17 @@
               <div class="row">
                 <div class="p-0 col-12 col-md-auto col-lg-2 position-relative">
                   <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/course.jpg"
+                    src="images/course.jpg"
                     class="course-image"
                     style="height: 100%; width: 100%"
                   />
                   <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/university.png"
+                    src="images/university.png"
                     class="position-absolute m-2 p-1 bg-primary rounded"
                     style="top: 0; left: 0"
                   />
                   <div
-                    class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                    class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute fs-14"
                     style="bottom: -1rem; right: 20px"
                   >
                     Scholarship
@@ -1076,34 +1007,34 @@
                 </div>
                 <div class="col p-3 row justify-content-around">
                   <div class="col-12 col-md-6">
-                    <h6 class="card-title m-0">
+                    <h5 class="card-title">
                       Bachelor of Business Administration
+                    </h5>
+                    <h6>
+                      <small class="card-subtitle mb-2">
+                        Kenyatta University • 3 years
+                      </small>
                     </h6>
-                    <small class="card-subtitle mb-2">
-                      Kenyatta University • 3 years
-                    </small>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore
                       magna.
                     </p>
                     <div
-                      class="btn bg-primary text-white rounded-pill d-none d-md-inline-block"
+                      class="btn bg-primary text-white rounded-pill d-none d-md-inline-block fs-14"
                     >
                       Scholarship
                     </div>
                   </div>
                   <div class="col-6 col-md-auto">
                     <div>
-                      <h6>University Ranking</h6>
+                      <h6 class="fs-14">University Ranking</h6>
                       <p>#8 in Africa</p>
                     </div>
                     <div>
-                      <h6>Course Rating</h6>
+                      <h6 class="fs-14">Course Rating</h6>
                       <p>
-                        <img
-                          src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/star.svg"
-                        />
+                        <img src="images/star.svg" />
                         4.5
                       </p>
                     </div>
@@ -1112,7 +1043,7 @@
                     <button class="btn btn-outline-primary">
                       Read More&emsp;<img
                         class="mb-1"
-                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/chevron-right.svg"
+                        src="images/chevron-right.svg"
                       />
                     </button>
                   </div>
@@ -1123,17 +1054,17 @@
               <div class="row">
                 <div class="p-0 col-12 col-md-auto col-lg-2 position-relative">
                   <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/course.jpg"
+                    src="images/course.jpg"
                     class="course-image"
                     style="height: 100%; width: 100%"
                   />
                   <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/university.png"
+                    src="images/university.png"
                     class="position-absolute m-2 p-1 bg-primary rounded"
                     style="top: 0; left: 0"
                   />
                   <div
-                    class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute"
+                    class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute fs-14"
                     style="bottom: -1rem; right: 20px"
                   >
                     Scholarship
@@ -1141,34 +1072,34 @@
                 </div>
                 <div class="col p-3 row justify-content-around">
                   <div class="col-12 col-md-6">
-                    <h6 class="card-title m-0">
+                    <h5 class="card-title">
                       Bachelor of Business Administration
+                    </h5>
+                    <h6>
+                      <small class="card-subtitle mb-2">
+                        Kenyatta University • 3 years
+                      </small>
                     </h6>
-                    <small class="card-subtitle mb-2">
-                      Kenyatta University • 3 years
-                    </small>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore
                       magna.
                     </p>
                     <div
-                      class="btn bg-primary text-white rounded-pill d-none d-md-inline-block"
+                      class="btn bg-primary text-white rounded-pill d-none d-md-inline-block fs-14"
                     >
                       Scholarship
                     </div>
                   </div>
                   <div class="col-6 col-md-auto">
                     <div>
-                      <h6>University Ranking</h6>
+                      <h6 class="fs-14">University Ranking</h6>
                       <p>#8 in Africa</p>
                     </div>
                     <div>
-                      <h6>Course Rating</h6>
+                      <h6 class="fs-14">Course Rating</h6>
                       <p>
-                        <img
-                          src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/star.svg"
-                        />
+                        <img src="images/star.svg" />
                         4.5
                       </p>
                     </div>
@@ -1177,7 +1108,7 @@
                     <button class="btn btn-outline-primary">
                       Read More&emsp;<img
                         class="mb-1"
-                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/chevron-right.svg"
+                        src="images/chevron-right.svg"
                       />
                     </button>
                   </div>
@@ -1188,10 +1119,7 @@
           <br class="d-none d-md-block" />
           <div class="text-center">
             <button class="btn btn-primary">
-              See All&emsp;<img
-                class="mb-1"
-                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/reload.svg"
-              />
+              See All&emsp;<img class="mb-1" src="images/reload.svg" />
             </button>
           </div>
         </div>
@@ -1216,12 +1144,12 @@
         >
           <div class="col-md-5 text-center">
             <img
-              src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/africa-group-faces-dark.svg"
+              src="images/africa-group-faces-dark.svg"
               class="d-none d-md-block"
               style="max-height: 300px"
             />
             <img
-              src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/africa-group-faces-dark.svg"
+              src="images/africa-group-faces-dark.svg"
               class="d-block d-md-none position-absolute p-2 m-2"
               style="height: 100px; right: 0; top: 0"
             />
@@ -1271,11 +1199,9 @@
     <footer class="text-white">
       <section class="row py-4 px-5 position-relative bg-primary">
         <div class="col-12 col-md-3">
+          <img src="images/logo-white.png" />
           <img
-            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/logo-white.png"
-          />
-          <img
-            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/left-intersect.svg"
+            src="images/left-intersect.svg"
             class="position-absolute d-none d-md-block"
             style="left: 0; bottom: 0; height: calc(100% - 3rem)"
           />
@@ -1353,18 +1279,10 @@
             <div
               class="col-6 d-flex justify-content-around d-md-none align-items-start"
             >
-              <img
-                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/facebook.svg"
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/twitter.svg"
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/youtube.svg"
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/instagram.svg"
-              />
+              <img src="images/facebook.svg" />
+              <img src="images/twitter.svg" />
+              <img src="images/youtube.svg" />
+              <img src="images/instagram.svg" />
             </div>
             <div class="col-12 d-block d-md-none">
               <div class="btn-group">
@@ -1374,18 +1292,13 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/kenya.svg"
-                  />
+                  <img src="images/kenya.svg" />
                   Kenya
                 </button>
                 <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item" href="#"
-                      ><img
-                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/kenya.svg"
-                      />
-                      Kenya</a
+                      ><img src="images/kenya.svg" /> Kenya</a
                     >
                   </li>
                 </ul>
@@ -1408,7 +1321,7 @@
             >
           </div>
           <img
-            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/right-intersect.svg"
+            src="images/right-intersect.svg"
             class="position-absolute d-none d-md-block"
             style="right: 0; top: 0; height: calc(100% - 6rem)"
           />
@@ -1426,18 +1339,13 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <img
-                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/kenya.svg"
-              />
+              <img src="images/kenya.svg" />
               Kenya
             </button>
             <ul class="dropdown-menu">
               <li>
                 <a class="dropdown-item" href="#"
-                  ><img
-                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/kenya.svg"
-                  />
-                  Kenya</a
+                  ><img src="images/kenya.svg" /> Kenya</a
                 >
               </li>
             </ul>
@@ -1449,18 +1357,10 @@
         <div
           class="col col-md-3 col-lg-2 d-md-flex justify-content-around d-none"
         >
-          <img
-            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/facebook.svg"
-          />
-          <img
-            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/twitter.svg"
-          />
-          <img
-            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/youtube.svg"
-          />
-          <img
-            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/instagram.svg"
-          />
+          <img src="images/facebook.svg" />
+          <img src="images/twitter.svg" />
+          <img src="images/youtube.svg" />
+          <img src="images/instagram.svg" />
         </div>
       </section>
     </footer>
