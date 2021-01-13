@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <title>Craydle</title>
+    <style>
+      :root {
+        --primary: #18244f;
+        --dark: #0e1636;
+        --light: #fafafa;
+        --default: #f1f1f1;
+      }
+      /* body {
+        font-size: 1.2rem;
+      } */
+      .bg-primary {
+        background-color: var(--primary) !important;
+      }
+      .text-primary {
+        color: var(--primary) !important;
+      }
+      .bg-light {
+        background-color: var(--light);
+      }
+      .bg-default {
+        background-color: var(--default);
+      }
+      .border-primary,
+      input,
+      select,
+      textarea {
+        border-color: var(--primary) !important;
+      }
+      .btn-outline-primary {
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+      .btn-outline-primary:hover,
+      .btn-outline-primary:active {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+      .btn-primary:hover,
+      .btn-primary:active {
+        background-color: var(--dark);
+        border-color: var(--dark);
+      }
+      .row {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 100%;
+      }
+      textarea {
+        resize: none;
+      }
+      label {
+        font-size: 11px;
+        position: absolute;
+        top: -7px;
+        left: 20px;
+        padding: 0 5px;
+        background-color: #f7e2d9;
+      }
+      .pr-0 {
+        padding-right: 0 !important;
+      }
+      .pl-0 {
+        padding-left: 0 !important;
+      }
+      h1 {
+        font-size: 3.5rem;
+      }
+      /* h2 {
+        font-size: 3rem
+      } */
+      h3 {
+        font-size: 2.2rem;
+      }
+      /* h4 {
+        font-size: 3.5rem
+      }
+      h5 {
+        font-size: 3.5rem
+      }
+      h6 {
+        font-size: 3.5rem
+      }
+      p {
+      }
+      */
+      .fs-14 {
+        font-size: 14px !important;
+      }
+      .card-title {
+        font-size: 18px;
+      }
+      body {
+        transition: all 0.4s ease 0s;
+      }
+
+      #navbarSupportedContent {
+        top: 0;
+        right: -200px;
+        width: 200px;
+        position: fixed;
+        height: 100%;
+        overflow-y: auto;
+        z-index: 1000;
+        transition: all 0.4s ease 0s;
+      }
+
+      body.active,
+      body.active header {
+        right: 200px !important;
+      }
+
+      body.active #navbarSupportedContent {
+        right: 0;
+      }
+
+      a.btn.active[role="tab"] {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: #fff;
+      }
+      a.btn.active[role="tab"]:hover,
+      a.btn.active[role="tab"]:active {
+        background-color: var(--dark);
+        border-color: var(--dark);
+        color: #fff;
+      }
+
+      .blue-scrollbar::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+        border-radius: 0.25rem;
+      }
+      .blue-scrollbar::-webkit-scrollbar-button {
+        width: 0px;
+        height: 0px;
+      }
+      .blue-scrollbar::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border: 0px none var(--primary);
+        border-radius: 0.25rem;
+      }
+      .blue-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: var(--dark);
+      }
+      .blue-scrollbar::-webkit-scrollbar-thumb:active {
+        background: var(--dark);
+      }
+      .blue-scrollbar::-webkit-scrollbar-track {
+        background: #18244f0f;
+        border: 0px none #18244f0f;
+        border-radius: 0.25rem;
+      }
+      .blue-scrollbar::-webkit-scrollbar-track:hover {
+        background: #18244f0f;
+      }
+      .blue-scrollbar::-webkit-scrollbar-track:active {
+        background: #18244f0f;
+      }
+      .blue-scrollbar::-webkit-scrollbar-corner {
+        background: transparent;
+      }
+
+      @media (max-width: 768px) {
+        .course-image {
+          max-height: 200px;
+        }
+      }
+      @media (min-width: 768px) {
+        .border-md-transparent {
+          border-color: transparent !important;
+        }
+      }
+      @media (max-width: 1200px) {
+        .cover-map-with-faces {
+          position: absolute;
+          height: 200px;
+          top: 30%;
+          right: 10%;
+        }
+        .cover-label {
+          top: -15px;
+        }
+      }
+    </style>
+  </head>
+  <body class="container-fluid px-0 text-primary mx-auto position-relative">
+    <header
+      class="fixed-top d-flex flex-column flex-lg-row align-items-center p-1 px-lg-4 mb-3 bg-white border-bottom shadow-sm"
+    >
+      <nav class="navbar navbar-expand-lg w-100 navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"
+            ><img
+              src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/logo.png"
+          /></a>
+          <div class="d-inline-block d-lg-none">
+            <button class="btn">
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/search.svg"
+              />
+            </button>
+            <button class="btn btn-primary d-inline-block d-lg-none">
+              Apply
+            </button>
+
+            <button id="menu-toggle" class="navbar-toggler" type="button">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse justify-content-end">
+            <ul
+              class="navbar-nav mb-2 mb-lg-0 col-xl-10 align-items-center justify-content-around"
+            >
+              <li class="nav-item">
+                <a class="nav-link text-reset" href="#">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-reset" href="#">Universities</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link text-reset dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Company
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Company</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-reset" href="#">Partner with us</a>
+              </li>
+              <button class="btn d-lg-inline-block d-none">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/search.svg"
+                />
+              </button>
+              <button class="btn btn-primary d-lg-inline-block d-none">
+                Apply Now
+              </button>
+              <li class="nav-item d-flex align-items-center">
+                <div class="btn text-primary">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/phone.svg"
+                  />
+                </div>
+                <div>
+                  <small>Call us 24/7</small>
+                  <h5>+254 700 000 000</h5>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="" style="margin-top: 72px">
+      <!-- top section -->
+      <section class="p-5 pb-0" style="background: #e8e9ed">
+        <div class="row">
+          <div class="col-12">
+            <img src="images/chevron-left.svg" />&ensp;<span
+              class="fs-14"
+              style="color: #8692a6"
+              >Back</span
+            >
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col">
+            <h3>Bachelor of Business Administration</h3>
+            <small
+              ><b>University of Nairobi • 4 year undergraduate course</b></small
+            >
+          </div>
+          <div class="col-auto">
+            <div class="row">
+              <div class="col-auto">
+                <button class="btn btn-outline-primary px-4">
+                  <img class="mb-1" src="images/share.svg" />&emsp;Share this
+                  course
+                </button>
+              </div>
+              <div class="col-auto">
+                <button class="btn btn-primary px-5">Apply</button>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-12">Call center : 07 100 00 000</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section -->
+      <section
+        class="py-2 px-5"
+        style="
+          background: #e8e9ed;
+          background: linear-gradient(
+            to bottom,
+            #e8e9ed 0%,
+            #e8e9ed 50%,
+            rgba(255, 255, 255, 1) 50%,
+            rgba(255, 255, 255, 1) 100%
+          );
+        "
+      >
+        <div
+          class="py-1 rounded-pill d-inline-flex"
+          style="background: #efeff6; overflow: hidden; height: 54px"
+        >
+          <ul
+            class="row flex-nowrap p-1 nav nav-tabs"
+            id="myTab"
+            style="overflow-x: auto; overflow-y: hidden; height: 1000px"
+            role="tablist"
+          >
+            <li class="col-auto" role="presentation">
+              <a
+                class="btn rounded-pill active"
+                id="overview-tab"
+                data-bs-toggle="tab"
+                href="#overview"
+                role="tab"
+                aria-controls="overview"
+                aria-selected="true"
+              >
+                <b>Overview</b>
+              </a>
+            </li>
+            <li class="col-auto" role="presentation">
+              <a
+                class="btn rounded-pill"
+                id="prospectus-tab"
+                data-bs-toggle="tab"
+                href="#prospectus"
+                role="tab"
+                aria-controls="prospectus"
+                aria-selected="false"
+                ><b>Prospectus</b></a
+              >
+            </li>
+            <li class="col-auto" role="presentation">
+              <a
+                class="btn rounded-pill"
+                id="syllabus-tab"
+                data-bs-toggle="tab"
+                href="#syllabus"
+                role="tab"
+                aria-controls="syllabus"
+                aria-selected="false"
+                ><b>Syllabus</b></a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- section -->
+      <section class="p-5 pt-4 row gy-4">
+        <div class="col">
+          <div class="ratio ratio-16x9 position-relative">
+            <img src="images/course-card.png" />
+            <button
+              class="btn rounded-circle position-absolute"
+              style="
+                height: 100px;
+                width: 100px;
+                background: rgba(24, 36, 79, 0.47);
+                opacity: 0.8;
+                top: calc(50% - 50px);
+                left: calc(50% - 50px);
+              "
+            >
+              <img src="images/play.png" />
+            </button>
+          </div>
+          <br />
+          <div class="tab-content" id="myTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="overview"
+              role="tabpanel"
+              aria-labelledby="overview-tab"
+            >
+              <p>
+                This course is designed for those who would like to build a
+                career in management, mainly in the profit-driven sectors. The
+                programme carefully combines theoretical and practical learning
+                as part of its training approach and incorporates work-related
+                learning to ensure the production of graduates with both the
+                knowledge and the skills to succeed in the cutthroat business
+                sectors in the world.
+              </p>
+              <br />
+              <h4>What we offer</h4>
+              <p>
+                Students learn to connect business concepts to the larger global
+                society, with preparation for a clear career path within the
+                field of business including;
+              </p>
+              <ul>
+                <li>Analysis of business problems and opportunities</li>
+                <li>
+                  Key business functions, such as leadership and
+                  entrepreneurship
+                </li>
+                <li>
+                  Analysis and implementation of business decisions and theories
+                </li>
+                <li>A community designed to support and inspire you</li>
+              </ul>
+              <br />
+              <h4>Who is this course for?</h4>
+              <div class="row">
+                <div class="col pl-0">
+                  <ul>
+                    <li>Operations Manager</li>
+                    <li>Business Process Analyst</li>
+                    <li>Business Consultant</li>
+                    <li>Business Lecturer</li>
+                  </ul>
+                </div>
+                <div class="col pl-0">
+                  <ul>
+                    <li>Branch Supervisor</li>
+                    <li>Branch Manager</li>
+                    <li>Country Manager</li>
+                    <li>Change Management Consultant</li>
+                  </ul>
+                </div>
+              </div>
+              <br />
+              <h4>Prerequisites</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur.
+              </p>
+              <br />
+              <h4>Fees</h4>
+              <div class="row">
+                <div class="col px-0">
+                  <table class="table table-borderless text-primary">
+                    <tr>
+                      <td class="px-0"><b>Application fees</b></td>
+                      <td class="px-0">KES. 1,500</td>
+                    </tr>
+                    <tr>
+                      <td class="px-0"><b>Registration</b></td>
+                      <td class="px-0">KES. 5,000</td>
+                    </tr>
+                    <tr>
+                      <td class="px-0"><b>Fees</b></td>
+                      <td class="px-0">KES. 150,000/term</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col px-0">
+                  <table class="table table-borderless text-primary">
+                    <tr>
+                      <td class="px-0"><b>Administration</b></td>
+                      <td class="px-0">KES. 1,500</td>
+                    </tr>
+                    <tr>
+                      <td class="px-0"><b>Registration</b></td>
+                      <td class="px-0">KES. 5,000</td>
+                    </tr>
+                    <tr>
+                      <td class="px-0"><b>Fees</b></td>
+                      <td class="px-0">KES. 150,000/term</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="prospectus"
+              role="tabpanel"
+              aria-labelledby="prospectus-tab"
+            >
+              <h4>Why choose University of Nairobi</h4>
+              <p>
+                The programme consists of 11 core (required) modules and 8
+                elective modules. The Research Methodology is a pre-requisite
+                for the dissertation in this course. Some modules may be
+                co-requisite (i.e. such modules are required to be taken
+                together).
+              </p>
+              <p>
+                The number at the end of the module in parenthesis indicates the
+                credit load of the module. 1 credit is equal to 10 hours of
+                learning (guided, in class and independent combined); therefore
+                a 10-credit module requires on average 100 hours of learning
+                from the student. The Programme will be Block Release and
+                Distance Learning.
+              </p>
+              <br />
+              <h4>Employability and graduates</h4>
+              <p>
+                Univerisity of Nairobi provides quality support services and
+                programmes that advance student access to learning, welfare,
+                wellness and talent development through Student and Alumni
+                Affairs Department (SAAD).
+              </p>
+              <br />
+              <h4>Important points to remember when applying</h4>
+              <p>
+                All students can apply in person or through the online
+                application form available on the website. Please read the
+                “Steps to Apply” document available on the application portal
+                before applying.
+              </p>
+              <ul>
+                <li>
+                  Please present clear certified copies of all relevant
+                  educational certificates.
+                </li>
+                <li>
+                  Please present clear certified of Omang/passport/identity
+                  card.
+                </li>
+                <li>
+                  Please read the Fee Structure and Policy document available on
+                  the website before applying.
+                </li>
+                <li>
+                  Should you have any doubts on the application process, please
+                  contact our admissions department for further assistance.
+                </li>
+              </ul>
+              <br />
+              <div class="row">
+                <img src="images/prospectus-1.jpg" class="col-6" />
+                <img src="images/prospectus-2.jpg" class="col-6" />
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="syllabus"
+              role="tabpanel"
+              aria-labelledby="syllabus-tab"
+            >
+              <div class="card card-body p-0">
+                <table
+                  class="table table-bordered text-primary m-0"
+                  style="border-color: #dddcff !important"
+                >
+                  <thead style="background: #eef1fe">
+                    <th class="py-3">Course Code</th>
+                    <th class="py-3">Course Name</th>
+                    <th class="py-3">Prerequisites</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>BUS 1101</td>
+                      <td>Principles of Business Management</td>
+                      <td>None</td>
+                    </tr>
+                    <tr>
+                      <td>BUS 1102</td>
+                      <td>Basic Accounting</td>
+                      <td>BUS 1102</td>
+                    </tr>
+                    <tr>
+                      <td>BUS 1103</td>
+                      <td>Microeconomics</td>
+                      <td>None</td>
+                    </tr>
+                    <tr>
+                      <td>BUS 2201</td>
+                      <td>Macroeconomics</td>
+                      <td>BUS 1102</td>
+                    </tr>
+                    <tr>
+                      <td>BUS 2202</td>
+                      <td>Business Communications</td>
+                      <td>None</td>
+                    </tr>
+                    <tr>
+                      <td>BUS 2207</td>
+                      <td>Principles of Marketing</td>
+                      <td>BUS 2207</td>
+                    </tr>
+                    <tr>
+                      <td>BUS 3305</td>
+                      <td>E-Commerce</td>
+                      <td>BUS 3305</td>
+                    </tr>
+                    <tr>
+                      <td>BUS 3306</td>
+                      <td>Principles of Finance 1</td>
+                      <td>BUS 3306</td>
+                    </tr>
+                    <tr>
+                      <td>BUS 4402</td>
+                      <td>Multinational Management</td>
+                      <td>None</td>
+                    </tr>
+                    <tr>
+                      <td>BUS 4405</td>
+                      <td>Business Law and Ethics</td>
+                      <td>None</td>
+                    </tr>
+                    <tr>
+                      <td>BUS 4406</td>
+                      <td>Quality Management</td>
+                      <td>BUS 4406</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-5">
+          <div class="p-4 rounded" style="background-color: #f7e2d9">
+            <div class="row mb-3">
+              <h3 class="col">Interested in a course or have a question?</h3>
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/africa-group-faces-dark.svg"
+                class="col-auto"
+                style="height: 150px; right: 0; top: 0"
+              />
+            </div>
+            <form class="row gy-3">
+              <div class="col-12 position-relative">
+                <label>Full Name</label>
+                <input class="form-control bg-transparent" />
+              </div>
+              <div class="col-12 position-relative">
+                <label>Email Address</label>
+                <input class="form-control bg-transparent" />
+              </div>
+              <div class="col-12 position-relative">
+                <label>Course</label>
+                <select class="form-select bg-transparent"></select>
+              </div>
+              <div class="col-12 position-relative">
+                <label>University</label>
+                <select class="form-select bg-transparent"></select>
+              </div>
+              <div class="col-12 position-relative">
+                <label>Comment</label>
+                <textarea
+                  class="form-control bg-transparent"
+                  rows="1"
+                ></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100">
+                  Send query
+                </button>
+              </div>
+            </form>
+            <br />
+          </div>
+          <br />
+          <div>
+            <div class="row">
+              <div class="col px-0">
+                <h4>Reviews</h4>
+              </div>
+              <div class="col px-0"></div>
+            </div>
+            <div
+              class="px-2 blue-scrollbar"
+              style="height: 403px; overflow-y: auto"
+            >
+              <div>
+                <div class="row mb-3">
+                  <div class="col-auto">
+                    <img src="images/reviewer-1.png" />
+                  </div>
+                  <div class="col">
+                    <div class="fs-14">Monicah Mwai</div>
+                    <div>
+                      <img src="images/star.svg" />
+                      <img src="images/star.svg" />
+                      <img src="images/star.svg" />
+                      <img src="images/star.svg" />
+                      <img src="images/star.svg" />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <small>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </small>
+                </div>
+                <span style="font-size: 10px"><b>December 10, 2016</b></span>
+                <hr />
+              </div>
+              <div>
+                <div class="row mb-3">
+                  <div class="col-auto">
+                    <img src="images/reviewer-2.png" />
+                  </div>
+                  <div class="col">
+                    <div class="fs-14">Martha Karua</div>
+                    <div>
+                      <img src="images/star.svg" />
+                      <img src="images/star.svg" />
+                      <img src="images/star.svg" />
+                      <img src="images/star.svg" />
+                      <img src="images/star.svg" />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <small>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </small>
+                </div>
+                <span style="font-size: 10px"><b>December 10, 2016</b></span>
+                <hr />
+              </div>
+              <div>
+                <div class="row mb-3">
+                  <div class="col-auto">
+                    <img src="images/reviewer-1.png" />
+                  </div>
+                  <div class="col">
+                    <div class="fs-14">Monicah Mwai</div>
+                    <div>
+                      <img src="images/star.svg" />
+                      <img src="images/star.svg" />
+                      <img src="images/star.svg" />
+                      <img src="images/star.svg" />
+                      <img src="images/star.svg" />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <small>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </small>
+                </div>
+                <span style="font-size: 10px"><b>December 10, 2016</b></span>
+                <hr />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- similar courses section -->
+      <section class="p-5 bg-default">
+        <div class="row gy-3 justify-content-between">
+          <h3 class="col-12 col-md p-0 row align-items-md-center">
+            <span class="col-12 col-md-auto mb-3"
+              >Similar top courses near you in</span
+            >
+            <div class="btn-group col-12 col-md-auto mb-3">
+              <button
+                type="button"
+                class="btn text-primary text-start text-md-center dropdown-toggle border-primary border-md-transparent"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <h3 class="d-inline">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/business-dark.svg"
+                  />
+                  business
+                </h3>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><img
+                      src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/business-dark.svg"
+                    />
+                    business</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </h3>
+          <div class="col-12 col-md-auto mb-3 mt-0">
+            <button type="button" class="btn bg-white btn-lg">
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/filter.svg"
+              />
+              Filter
+            </button>
+          </div>
+        </div>
+        <br />
+        <div>
+          <div
+            class="card mb-3"
+            style="background: #f9f9f9; border-radius: 0.4rem"
+          >
+            <div class="row">
+              <div class="p-0 col-12 col-md-auto col-lg-2 position-relative">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/course.jpg"
+                  class="course-image"
+                  style="height: 100%; width: 100%"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/university.png"
+                  class="position-absolute m-2 p-1 bg-primary rounded"
+                  style="top: 0; left: 0"
+                />
+                <div
+                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute fs-14"
+                  style="bottom: -1rem; right: 20px"
+                >
+                  Scholarship
+                </div>
+              </div>
+              <div class="col p-3 row justify-content-around">
+                <div class="col-12 col-md-6">
+                  <h5 class="card-title">
+                    Bachelor of Business Administration
+                  </h5>
+                  <h6>
+                    <small class="card-subtitle mb-2">
+                      Kenyatta University • 3 years
+                    </small>
+                  </h6>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna.
+                  </p>
+                  <div
+                    class="btn bg-primary text-white rounded-pill d-none d-md-inline-block fs-14"
+                  >
+                    Scholarship
+                  </div>
+                </div>
+                <div class="col-6 col-md-auto">
+                  <div>
+                    <h6 class="fs-14">University Ranking</h6>
+                    <p>#8 in Africa</p>
+                  </div>
+                  <div>
+                    <h6 class="fs-14">Course Rating</h6>
+                    <p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/star.svg"
+                      />
+                      4.5
+                    </p>
+                  </div>
+                </div>
+                <div class="col-6 col-md-auto d-flex align-items-center">
+                  <button class="btn btn-outline-primary">
+                    Read More&emsp;<img
+                      class="mb-1"
+                      src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/chevron-right.svg"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-3"
+            style="background: #f9f9f9; border-radius: 0.4rem"
+          >
+            <div class="row">
+              <div class="p-0 col-12 col-md-auto col-lg-2 position-relative">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/course.jpg"
+                  class="course-image"
+                  style="height: 100%; width: 100%"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/university.png"
+                  class="position-absolute m-2 p-1 bg-primary rounded"
+                  style="top: 0; left: 0"
+                />
+                <div
+                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute fs-14"
+                  style="bottom: -1rem; right: 20px"
+                >
+                  Scholarship
+                </div>
+              </div>
+              <div class="col p-3 row justify-content-around">
+                <div class="col-12 col-md-6">
+                  <h5 class="card-title">
+                    Bachelor of Business Administration
+                  </h5>
+                  <h6>
+                    <small class="card-subtitle mb-2">
+                      Kenyatta University • 3 years
+                    </small>
+                  </h6>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna.
+                  </p>
+                  <div
+                    class="btn bg-primary text-white rounded-pill d-none d-md-inline-block fs-14"
+                  >
+                    Scholarship
+                  </div>
+                </div>
+                <div class="col-6 col-md-auto">
+                  <div>
+                    <h6 class="fs-14">University Ranking</h6>
+                    <p>#8 in Africa</p>
+                  </div>
+                  <div>
+                    <h6 class="fs-14">Course Rating</h6>
+                    <p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/star.svg"
+                      />
+                      4.5
+                    </p>
+                  </div>
+                </div>
+                <div class="col-6 col-md-auto d-flex align-items-center">
+                  <button class="btn btn-outline-primary">
+                    Read More&emsp;<img
+                      class="mb-1"
+                      src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/chevron-right.svg"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-3"
+            style="background: #f9f9f9; border-radius: 0.4rem"
+          >
+            <div class="row">
+              <div class="p-0 col-12 col-md-auto col-lg-2 position-relative">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/course.jpg"
+                  class="course-image"
+                  style="height: 100%; width: 100%"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/university.png"
+                  class="position-absolute m-2 p-1 bg-primary rounded"
+                  style="top: 0; left: 0"
+                />
+                <div
+                  class="btn rounded-pill bg-primary text-white d-inline-block d-md-none position-absolute fs-14"
+                  style="bottom: -1rem; right: 20px"
+                >
+                  Scholarship
+                </div>
+              </div>
+              <div class="col p-3 row justify-content-around">
+                <div class="col-12 col-md-6">
+                  <h5 class="card-title">
+                    Bachelor of Business Administration
+                  </h5>
+                  <h6>
+                    <small class="card-subtitle mb-2">
+                      Kenyatta University • 3 years
+                    </small>
+                  </h6>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna.
+                  </p>
+                  <div
+                    class="btn bg-primary text-white rounded-pill d-none d-md-inline-block fs-14"
+                  >
+                    Scholarship
+                  </div>
+                </div>
+                <div class="col-6 col-md-auto">
+                  <div>
+                    <h6 class="fs-14">University Ranking</h6>
+                    <p>#8 in Africa</p>
+                  </div>
+                  <div>
+                    <h6 class="fs-14">Course Rating</h6>
+                    <p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/star.svg"
+                      />
+                      4.5
+                    </p>
+                  </div>
+                </div>
+                <div class="col-6 col-md-auto d-flex align-items-center">
+                  <button class="btn btn-outline-primary">
+                    Read More&emsp;<img
+                      class="mb-1"
+                      src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/chevron-right.svg"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+      </section>
+      <!-- feature section -->
+      <section class="p-5 pt-4 row gy-4" style="background: #eef1fe">
+        <div class="col-12 col-md">
+          <div class="row">
+            <div class="col-auto">
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/inquire.svg"
+              />
+            </div>
+            <div class="col">
+              <div><b>Inquire</b></div>
+              about any course
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md">
+          <div class="row">
+            <div class="col-auto">
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/call.svg"
+              />
+            </div>
+            <div class="col">
+              <div><b>We will call you back</b></div>
+              and help you get started
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md">
+          <div class="row">
+            <div class="col-auto">
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/fill-form.svg"
+              />
+            </div>
+            <div class="col">
+              <div><b>Fill in application</b></div>
+              and wait for admission letter
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md">
+          <div class="row">
+            <div class="col-auto">
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/enroll.svg"
+              />
+            </div>
+            <div class="col">
+              <div><b>Get enrolled</b></div>
+              and build your career
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="text-white">
+      <section class="row py-4 p-md-5 p-2 position-relative bg-primary">
+        <div class="col-12 col-md-3">
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/logo-white.png"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/left-intersect.svg"
+            class="position-absolute d-none d-md-block"
+            style="left: 0; bottom: 0; height: calc(100% - 3rem)"
+          />
+        </div>
+        <div class="col-12 col-md-6 order-1 order-md-0">
+          <div class="row">
+            <div class="col-6 col-md">
+              <h6>Company</h6>
+              <ul class="list-unstyled text-small footer-links">
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Contact</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Careers</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Terms & Conditions</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Privacy Policy</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md">
+              <h6>For Students</h6>
+              <ul class="list-unstyled text-small footer-links">
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Courses</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Universities</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#">Blog</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md">
+              <h6>For Universities</h6>
+              <ul class="list-unstyled text-small footer-links">
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Become a Partner</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Request an Update</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Customer Support</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div
+              class="col-6 d-flex justify-content-around d-md-none align-items-start"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/facebook.svg"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/twitter.svg"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/youtube.svg"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/instagram.svg"
+              />
+            </div>
+            <div class="col-12 d-block d-md-none">
+              <div class="btn-group">
+                <button
+                  type="button"
+                  class="btn text-white dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/kenya.svg"
+                  />
+                  Kenya
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><img
+                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/kenya.svg"
+                      />
+                      Kenya</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md order-0 order-md-1">
+          <h6>Stay Updated</h6>
+          <div class="input-group input-group-lg mb-3">
+            <input
+              style="font-size: 14px"
+              class="form-control p-4 border-0"
+              placeholder="Stay in the loop  - drop us your email"
+              aria-label="Stay in the loop  - drop us your email"
+              aria-describedby="basic-addon2"
+            />
+            <span class="input-group-text pr-4 bg-white" id="basic-addon2"
+              ><button class="btn btn-primary">Subscribe</button></span
+            >
+          </div>
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/right-intersect.svg"
+            class="position-absolute d-none d-md-block"
+            style="right: 0; top: 0; height: calc(100% - 6rem)"
+          />
+        </div>
+      </section>
+      <section
+        class="row align-items-center w-100 mx-auto py-2"
+        style="background-color: var(--dark)"
+      >
+        <div class="col col-md-2 d-none d-md-block">
+          <div class="btn-group">
+            <button
+              type="button"
+              class="btn text-white dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/kenya.svg"
+              />
+              Kenya
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/kenya.svg"
+                  />
+                  Kenya</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-md text-center text-md-start">
+          &copy; Copyright 2020 | All Rights Reserved
+        </div>
+        <div
+          class="col col-md-3 col-lg-2 d-md-flex justify-content-around d-none"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/facebook.svg"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/twitter.svg"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/youtube.svg"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/instagram.svg"
+          />
+        </div>
+      </section>
+    </footer>
+    <ul class="navbar-nav h-100 p-4" id="navbarSupportedContent">
+      <li class="nav-item">
+        <a class="nav-link text-reset" href="#">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-reset" href="#">Universities</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link text-reset dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Company
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Company</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-reset" href="#">Partner with us</a>
+      </li>
+      <button class="btn d-lg-inline-block d-none">
+        <img
+          src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/search.svg"
+        />
+      </button>
+      <button class="btn btn-primary d-lg-inline-block d-none">
+        Apply Now
+      </button>
+      <li class="nav-item d-flex align-items-center">
+        <div class="btn text-primary">
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/phone.svg"
+          />
+        </div>
+        <div>
+          <small>Call us 24/7</small>
+          <h5>+254 700 000 000</h5>
+        </div>
+      </li>
+    </ul>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document
+        .querySelector("#menu-toggle")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector("body").classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>
