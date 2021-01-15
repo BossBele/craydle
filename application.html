@@ -130,30 +130,26 @@
         right: 0;
       }
 
-      a.btn[role="tab"] {
+      a.steps[role="tab"] {
         color: #e5e5e5;
+        text-decoration: none;
       }
-      a.btn[role="tab"] div.tab-circle {
+      a.steps[role="tab"] div.tab-circle {
         background-color: #e5e5e5;
       }
-      a.btn.active[role="tab"] {
+      a.steps.active[role="tab"] {
         color: var(--primary);
       }
-      a.btn.active[role="tab"] div.tab-circle {
+      a.steps.active[role="tab"] div.tab-circle {
         background-color: var(--primary);
       }
-      a.btn[role="tab"] .tab-line {
+
+      .btn.pay-option {
         background: #e5e5e5;
+        color: #ffffff;
       }
-      a.btn.active[role="tab"] .tab-line {
+      .btn.pay-option.active {
         background: var(--primary);
-        background: linear-gradient(
-          to right,
-          var(--primary) 0%,
-          var(--primary) 50%,
-          #e5e5e5 50%,
-          #e5e5e5 100%
-        );
       }
 
       .blue-scrollbar::-webkit-scrollbar {
@@ -304,121 +300,133 @@
         <h3>Course Application</h3>
       </section>
       <!-- steps section -->
-      <section class="py-2 px-5">
-        <ul class="row p-1 nav nav-tabs" id="myTab" role="tablist">
-          <li class="col" role="presentation">
-            <a
-              class="btn text-center active rounded-pill d-flex"
-              id="overview-tab"
-              data-bs-toggle="tab"
-              href="#overview"
-              role="tab"
-              aria-controls="overview"
-              aria-selected="true"
-            >
-              <div class="col-auto">
-                <div
-                  class="d-inline-block rounded-circle tab-circle"
-                  style="height: 24px; width: 24px"
-                ></div>
-                <div class="">
-                  <b
-                    >Personal<br />
-                    information</b
-                  >
+      <section class="p-5">
+        <div class="position-relative">
+          <div class="progress w-100" style="height: 3px">
+            <div
+              id="progress-bar"
+              class="progress-bar bg-primary rounded-pill"
+              role="progressbar"
+              style="width: 20%"
+              aria-valuenow="20"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+          <ul
+            class="row gx-0 py-1 w-100 nav justify-content-between position-absolute border-0"
+            style="top: -20px; left: 0"
+            id="myTab"
+          >
+            <div
+              style="
+                z-index: 10;
+                background: transparent;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+              "
+            ></div>
+            <li class="col-auto">
+              <a
+                class="steps text-center active rounded-pill d-flex"
+                id="overview-tab"
+                data-bs-toggle="tab"
+                href="#overview"
+                role="tab"
+                aria-controls="overview"
+                aria-selected="true"
+              >
+                <div class="col-auto bg-default">
+                  <div
+                    class="d-inline-block rounded-circle tab-circle"
+                    style="height: 24px; width: 24px"
+                  ></div>
+                  <div class="">
+                    <b
+                      >Personal<br />
+                      information</b
+                    >
+                  </div>
                 </div>
-              </div>
-              <div
-                class="col tab-line rounded-pill my-2"
-                style="height: 3px"
-              ></div>
-            </a>
-          </li>
-          <li class="col" role="presentation">
-            <a
-              class="btn text-center rounded-pill d-flex"
-              id="prospectus-tab"
-              data-bs-toggle="tab"
-              href="#prospectus"
-              role="tab"
-              aria-controls="prospectus"
-              aria-selected="false"
-            >
-              <div class="col-auto">
-                <div
-                  class="d-inline-block rounded-circle tab-circle"
-                  style="height: 24px; width: 24px"
-                ></div>
-                <div>
-                  <b
-                    >Academic<br />
-                    qualification</b
-                  >
+              </a>
+            </li>
+            <li class="col-auto">
+              <a
+                class="steps text-center rounded-pill d-flex"
+                id="prospectus-tab"
+                data-bs-toggle="tab"
+                href="#prospectus"
+                role="tab"
+                aria-controls="prospectus"
+                aria-selected="false"
+              >
+                <div class="col-auto bg-default">
+                  <div
+                    class="d-inline-block rounded-circle tab-circle"
+                    style="height: 24px; width: 24px"
+                  ></div>
+                  <div class="">
+                    <b
+                      >Academic<br />
+                      qualification</b
+                    >
+                  </div>
                 </div>
-              </div>
-              <div
-                class="col tab-line rounded-pill my-2"
-                style="height: 3px"
-              ></div>
-            </a>
-          </li>
-          <li class="col" role="presentation">
-            <a
-              class="btn text-center rounded-pill d-flex"
-              id="syllabus-tab"
-              data-bs-toggle="tab"
-              href="#syllabus"
-              role="tab"
-              aria-controls="syllabus"
-              aria-selected="false"
-            >
-              <div class="col-auto">
-                <div
-                  class="d-inline-block rounded-circle tab-circle"
-                  style="height: 24px; width: 24px"
-                ></div>
-                <div>
-                  <b
-                    >Payment<br />
-                    information</b
-                  >
+              </a>
+            </li>
+            <li class="col-auto" role="presentation">
+              <a
+                class="steps text-center rounded-pill d-flex"
+                id="syllabus-tab"
+                data-bs-toggle="tab"
+                href="#syllabus"
+                role="tab"
+                aria-controls="syllabus"
+                aria-selected="false"
+              >
+                <div class="col-auto bg-default">
+                  <div
+                    class="d-inline-block rounded-circle tab-circle"
+                    style="height: 24px; width: 24px"
+                  ></div>
+                  <div class="">
+                    <b
+                      >Payment<br />
+                      information</b
+                    >
+                  </div>
                 </div>
-              </div>
-              <div
-                class="col tab-line rounded-pill my-2"
-                style="height: 3px"
-              ></div>
-            </a>
-          </li>
-          <li class="col" role="presentation">
-            <a
-              class="btn text-center rounded-pill d-flex"
-              id="syllabus-tab"
-              data-bs-toggle="tab"
-              href="#syllabus"
-              role="tab"
-              aria-controls="syllabus"
-              aria-selected="false"
-            >
-              <div class="col-auto">
-                <div
-                  class="d-inline-block rounded-circle tab-circle"
-                  style="height: 24px; width: 24px"
-                ></div>
-                <div>
-                  <b
-                    >Review &<br />
-                    submit</b
-                  >
+              </a>
+            </li>
+            <li class="col-auto" role="presentation">
+              <a
+                class="steps text-center rounded-pill d-flex"
+                id="submission-tab"
+                data-bs-toggle="tab"
+                href="#submission"
+                role="tab"
+                aria-controls="submission"
+                aria-selected="false"
+              >
+                <div class="col-auto bg-default">
+                  <div
+                    class="d-inline-block rounded-circle tab-circle"
+                    style="height: 24px; width: 24px"
+                  ></div>
+                  <div class="">
+                    <b
+                      >Review &<br />
+                      submit</b
+                    >
+                  </div>
                 </div>
-              </div>
-              <div
-                class="col tab-line rounded-pill my-2"
-                style="height: 3px"
-              ></div>
-            </a>
-          </li>
-        </ul>
+              </a>
+            </li>
+          </ul>
+        </div>
       </section>
       <!-- section -->
       <section class="p-5">
@@ -475,7 +483,9 @@
             </div>
             <div class="row justify-content-end mt-3">
               <div class="col-12 col-md-4">
-                <button class="btn btn-primary w-100">Save & Proceed</button>
+                <button class="btn btn-primary w-100 save-proceed">
+                  Save & Proceed
+                </button>
               </div>
             </div>
           </div>
@@ -485,7 +495,88 @@
             role="tabpanel"
             aria-labelledby="prospectus-tab"
           >
-            <h4>Application</h4>
+            <div class="row">
+              <div class="col">
+                <h4>Tell us about your preferences & qualifications</h4>
+              </div>
+            </div>
+            <br />
+            <div class="row gy-3">
+              <div class="col-12 col-md-6 position-relative">
+                <label class="bg-white">Program choice 1</label>
+                <select class="form-select bg-transparent"></select>
+              </div>
+              <div class="col-12 col-md-6 position-relative">
+                <label class="bg-white">University</label>
+                <select class="form-select bg-transparent"></select>
+              </div>
+              <div class="col-12 col-md-6 position-relative">
+                <label class="bg-white">Program choice 2</label>
+                <select class="form-select bg-transparent"></select>
+              </div>
+              <div class="col-12 col-md-6 position-relative">
+                <label class="bg-white">University</label>
+                <select class="form-select bg-transparent"></select>
+              </div>
+              <div class="col-12 col-md-6 position-relative">
+                <label class="bg-white">Program choice 3</label>
+                <select class="form-select bg-transparent"></select>
+              </div>
+              <div class="col-12 col-md-6 position-relative">
+                <label class="bg-white">University</label>
+                <select class="form-select bg-transparent"></select>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">
+                <h4>Academic qualification</h4>
+              </div>
+            </div>
+            <div class="row gy-3">
+              <div class="col-12 col-md-4 position-relative">
+                <label class="bg-white">Year of exam</label>
+                <select class="form-select bg-transparent"></select>
+              </div>
+              <div class="col-12 col-md-4 position-relative">
+                <label class="bg-white">Examination body</label>
+                <select class="form-select bg-transparent"></select>
+              </div>
+              <div class="col-12 col-md-4 position-relative">
+                <label class="bg-white">Average grade</label>
+                <select class="form-select bg-transparent"></select>
+              </div>
+
+              <div class="col-12 col-md-4 position-relative">
+                <input type="file" name="" id="upload-document" hidden />
+                <button
+                  onclick="document.getElementById('upload-document').click()"
+                  class="btn text-primary w-100 py-0"
+                  style="background: rgba(24, 36, 79, 0.1)"
+                >
+                  <div>
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/upload.svg"
+                      style="height: 20px"
+                    />
+                  </div>
+                  <small>Upload Document</small>
+                </button>
+              </div>
+            </div>
+            <br />
+            <div class="row gy-3 justify-content-between mt-3">
+              <div class="col-12 col-md-4">
+                <button class="btn border-primary text-primary w-100">
+                  Add another Qualification +
+                </button>
+              </div>
+              <div class="col-12 col-md-4">
+                <button class="btn btn-primary w-100 save-proceed">
+                  Save & Proceed
+                </button>
+              </div>
+            </div>
           </div>
           <div
             class="tab-pane fade"
@@ -493,7 +584,262 @@
             role="tabpanel"
             aria-labelledby="syllabus-tab"
           >
-            <h4>Application</h4>
+            <div class="row">
+              <div class="col">
+                <h4>Payment Information</h4>
+              </div>
+            </div>
+            <br />
+            <div class="row gy-3">
+              <div class="col-12 col-md-4">
+                <h5>About this payment</h5>
+                <table class="table table-borderless">
+                  <tr>
+                    <td class="pl-0">
+                      <small><b>Amount to be charged</b></small>
+                    </td>
+                    <td class=""><small>KES. 1,500</small></td>
+                  </tr>
+                  <tr>
+                    <td class="pl-0">
+                      <small><b>Reason for payment</b></small>
+                    </td>
+                    <td class=""><small>Application fee</small></td>
+                  </tr>
+                </table>
+                <br />
+                <div class="position-relative">
+                  <label class="bg-white">Discount code</label>
+                  <input
+                    class="form-control bg-transparent"
+                    placeholder="0XEEW2"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="row gy-3">
+                  <button class="btn pay-option active col-12">
+                    Pay with card
+                  </button>
+                  <button
+                    class="btn pay-option col-12"
+                    style="background: #e5e5e5"
+                  >
+                    PayPal
+                  </button>
+                  <button
+                    class="btn pay-option col-12"
+                    style="background: #e5e5e5"
+                  >
+                    Pay with M-Pesa
+                  </button>
+                  <button
+                    class="btn pay-option col-12"
+                    style="background: #e5e5e5"
+                  >
+                    Money Transfer Payment Method
+                  </button>
+                </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="row gy-3 gx-0">
+                  <div class="position-relative">
+                    <label class="bg-white">Name on card</label>
+                    <input class="form-control bg-transparent" />
+                  </div>
+                  <div class="position-relative">
+                    <label class="bg-white">Card number</label>
+                    <input class="form-control bg-transparent" />
+                  </div>
+                  <div>
+                    <div class="row">
+                      <div class="col-8 pl-0 position-relative">
+                        <label class="bg-white">Expiration</label>
+                        <input class="form-control bg-transparent" />
+                      </div>
+                      <div class="col-4 px-0 position-relative">
+                        <label class="bg-white">CVV</label>
+                        <input class="form-control bg-transparent" />
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary w-100 save-proceed">
+                    Save & Proceed
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="submission"
+            role="tabpanel"
+            aria-labelledby="submission-tab"
+          >
+            <div class="row">
+              <div class="col">
+                <h4>Review your application & Submit</h4>
+              </div>
+            </div>
+            <br />
+            <h5>Personal information</h5>
+            <div class="row gy-3 gx-0 justify-content-between">
+              <div class="col-12 col-md-6 col-lg-5">
+                <table class="table table-borderless">
+                  <tr>
+                    <td class="px-0">
+                      <b>Full name</b>
+                    </td>
+                    <td class="px-0 w-50">Jane Doe</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0">
+                      <b>Email address</b>
+                    </td>
+                    <td class="px-0">janedoe@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0">
+                      <b>Phone number</b>
+                    </td>
+                    <td class="px-0">+254 700 000 000</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0">
+                      <b>ID Type</b>
+                    </td>
+                    <td class="px-0">National ID</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0">
+                      <b>ID Number</b>
+                    </td>
+                    <td class="px-0">10190203</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-12 col-md-6">
+                <table class="table table-borderless">
+                  <tr>
+                    <td class="px-0">
+                      <b>Date of Birth</b>
+                    </td>
+                    <td class="px-0 w-50">12/10/1990</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0">
+                      <b>Nationality</b>
+                    </td>
+                    <td class="px-0">Kenyan</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0">
+                      <b>Do you have a disability?</b>
+                    </td>
+                    <td class="px-0">None</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0">
+                      <b>Gender</b>
+                    </td>
+                    <td class="px-0">Female</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <br />
+            <h5>Program details</h5>
+            <div class="row gy-3 gx-0 justify-content-between">
+              <div class="col-12 col-md-6 col-lg-5">
+                <table class="table table-borderless">
+                  <tr>
+                    <td class="px-0">
+                      <b>Program choice 1</b>
+                    </td>
+                    <td class="px-0 w-50">Jane Doe</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0">
+                      <b>Program choice 2</b>
+                    </td>
+                    <td class="px-0">janedoe@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0">
+                      <b>Program choice 3</b>
+                    </td>
+                    <td class="px-0">+254 700 000 000</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-12 col-md-6">
+                <table class="table table-borderless">
+                  <tr>
+                    <td class="px-0">
+                      <b>University 1</b>
+                    </td>
+                    <td class="px-0 w-50">12/10/1990</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0">
+                      <b>University 2</b>
+                    </td>
+                    <td class="px-0">Kenyan</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0">
+                      <b>University 3</b>
+                    </td>
+                    <td class="px-0">None</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <br />
+            <h5>Qualifications</h5>
+            <div class="row gy-3 gx-0 justify-content-between">
+              <div class="col-12 col-md-6 col-lg-5">
+                <table class="table table-borderless">
+                  <tr>
+                    <td class="px-0">
+                      <b>Year of exam</b>
+                    </td>
+                    <td class="px-0 w-50">2020</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0">
+                      <b>Examination body</b>
+                    </td>
+                    <td class="px-0">10190203</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0">
+                      <b>Average grade</b>
+                    </td>
+                    <td class="px-0">10190203</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col-auto">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/pdf.svg"
+                    />
+                  </div>
+                  <div class="col">
+                    <div>Graded KCSE certificate 2012.pdf</div>
+                    <small style="color: #bdbdbd">145kb</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row justify-content-end mt-3">
+              <div class="col-12 col-md-4">
+                <button class="btn btn-primary w-100">Save & Finish</button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -751,6 +1097,32 @@
           e.preventDefault();
           document.querySelector("body").classList.toggle("active");
         });
+
+      let barWidth = 20;
+
+      var elements = document.getElementsByClassName("save-proceed");
+
+      var myFunction = function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        let activeHref = document.querySelector("#myTab a.active");
+        activeHref.classList.toggle("text-primary");
+        let activeHrefChild = activeHref.firstElementChild;
+        activeHrefChild.firstElementChild.classList.toggle("bg-primary");
+
+        barWidth += 80 / 3;
+        document.querySelector("#progress-bar").style.width = `${barWidth}%`;
+
+        let nexter = activeHref.parentElement;
+        nexter = nexter.nextElementSibling;
+        nexter = nexter.firstChild.nextSibling;
+
+        nexter.click();
+      };
+
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener("click", myFunction, false);
+      }
     </script>
   </body>
 </html>
