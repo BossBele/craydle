@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <title>Craydle</title>
+    <style>
+      :root {
+        --primary: #18244f;
+        --dark: #0e1636;
+        --light: #fafafa;
+        --default: #f1f1f1;
+        --grey: #8c97ac;
+      }
+      /* body {
+        font-size: 1.2rem;
+      } */
+      .text-grey {
+        color: var(--grey) !important;
+      }
+      .bg-primary {
+        background-color: var(--primary) !important;
+      }
+      .text-primary {
+        color: var(--primary) !important;
+      }
+      .bg-light {
+        background-color: var(--light);
+      }
+      .bg-default {
+        background-color: var(--default);
+      }
+      .border-primary,
+      input,
+      select,
+      textarea {
+        border-color: var(--primary) !important;
+      }
+      .btn-outline-primary {
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+      .btn-outline-primary:hover,
+      .btn-outline-primary:active {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+      .btn-primary {
+        background-color: var(--primary) !important;
+        border-color: var(--primary) !important;
+      }
+      .btn-primary:hover,
+      .btn-primary:active {
+        background-color: var(--dark);
+        border-color: var(--dark);
+      }
+      .row {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 100%;
+      }
+      textarea {
+        resize: none;
+      }
+      label {
+        font-size: 11px;
+        position: absolute;
+        top: -7px;
+        left: 20px;
+        padding: 0 5px;
+        background-color: #f7e2d9;
+      }
+      .pr-0 {
+        padding-right: 0 !important;
+      }
+      .pl-0 {
+        padding-left: 0 !important;
+      }
+      .text-clip {
+        text-overflow: clip;
+        white-space: nowrap;
+        overflow: hidden;
+        /* max-width: 100px;
+  display: inline-block;
+  vertical-align: middle; */
+      }
+      h1 {
+        font-size: 3.5rem;
+      }
+      /* h2 {
+        font-size: 3rem
+      } */
+      h3 {
+        font-size: 2.2rem;
+      }
+      /* h4 {
+        font-size: 3.5rem
+      }
+      h5 {
+        font-size: 3.5rem
+      }
+      h6 {
+        font-size: 3.5rem
+      }
+      p {
+      }
+      */
+      .fs-14 {
+        font-size: 14px !important;
+      }
+      .card-title {
+        font-size: 18px;
+      }
+      body {
+        transition: all 0.4s ease 0s;
+      }
+
+      #navbarSupportedContent {
+        top: 0;
+        right: -200px;
+        width: 200px;
+        position: fixed;
+        height: 100%;
+        overflow-y: auto;
+        z-index: 1000;
+        transition: all 0.4s ease 0s;
+      }
+
+      body.active,
+      body.active header {
+        right: 200px !important;
+      }
+
+      body.active #navbarSupportedContent {
+        right: 0;
+      }
+
+      @media (max-width: 768px) {
+        .course-image {
+          max-height: 200px;
+        }
+      }
+      @media (min-width: 768px) {
+        .border-md-transparent {
+          border-color: transparent !important;
+        }
+      }
+      @media (max-width: 1200px) {
+        .cover-map-with-faces {
+          position: absolute;
+          height: 200px;
+          top: 30%;
+          right: 10%;
+        }
+        .cover-label {
+          top: -15px;
+        }
+      }
+    </style>
+  </head>
+  <body class="container-fluid px-0 text-primary mx-auto position-relative">
+    <header
+      class="fixed-top d-flex flex-column flex-lg-row align-items-center p-1 px-lg-4 mb-3 bg-white border-bottom shadow-sm"
+    >
+      <nav class="navbar navbar-expand-lg w-100 navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"
+            ><img
+              src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/logo.png"
+          /></a>
+          <div class="d-inline-block d-lg-none">
+            <button class="btn">
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/search.svg"
+              />
+            </button>
+            <button class="btn btn-primary d-inline-block d-lg-none">
+              Apply
+            </button>
+
+            <button id="menu-toggle" class="navbar-toggler" type="button">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse justify-content-end">
+            <ul
+              class="navbar-nav mb-2 mb-lg-0 col-xl-10 align-items-center justify-content-around"
+            >
+              <li class="nav-item">
+                <a class="nav-link text-reset" href="#">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-reset" href="#">Universities</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link text-reset dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Company
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Company</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-reset" href="#">Partner with us</a>
+              </li>
+              <button class="btn d-lg-inline-block d-none">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/search.svg"
+                />
+              </button>
+              <button class="btn btn-primary d-lg-inline-block d-none">
+                Apply Now
+              </button>
+              <li class="nav-item d-flex align-items-center">
+                <div class="btn text-primary">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/phone.svg"
+                  />
+                </div>
+                <div>
+                  <small>Call us 24/7</small>
+                  <h5>+254 700 000 000</h5>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="" style="margin-top: 72px">
+      <!-- top section -->
+      <section class="p-5 pb-0" style="background: #e8e9ed">
+        <div class="row">
+          <div class="col-12">
+            <a class="text-decoration-none" href="/">
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/chevron-left.svg"
+              />&ensp;<span class="fs-14" style="color: #8692a6">Homepage</span>
+            </a>
+          </div>
+        </div>
+        <br />
+        <div class="row gy-3">
+          <div class="col">
+            <h3>Company</h3>
+          </div>
+        </div>
+        <br />
+      </section>
+      <!-- section -->
+      <section
+        class="py-2 px-5"
+        style="
+          background: #e8e9ed;
+          background: linear-gradient(
+            to bottom,
+            #e8e9ed 0%,
+            #e8e9ed 50%,
+            #fff 50%,
+            #fff 100%
+          );
+        "
+      >
+        <div
+          class="row row-cols-4 py-2 rounded-pill"
+          style="background: #efeff6"
+        >
+          <div class="col">
+            <a class="btn rounded-pill text-reset fw-bold" href="#">
+              About <span class="d-none d-sm-inline">us</span>
+            </a>
+          </div>
+          <div class="col">
+            <a class="btn rounded-pill text-reset fw-bold" href="#">Careers</a>
+          </div>
+          <div class="col">
+            <a class="btn rounded-pill text-reset fw-bold" href="#"
+              >Privacy <span class="d-none d-sm-inline">policy</span></a
+            >
+          </div>
+          <div class="col">
+            <a class="btn btn-primary rounded-pill fw-bold text-clip" href="#"
+              >Terms <span class="d-none d-md-inline">of service</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- terms section -->
+      <section class="p-5 pt-4">
+        <h3>Who May Use our Services</h3>
+        <p>
+          You may use our Services only if you can form a binding contract with
+          Coursera, and only in compliance with these Terms and all applicable
+          laws. When you create your Coursera account, and subsequently when you
+          use certain features, you must provide us with accurate and complete
+          information, and you agree to update your information to keep it
+          accurate and complete. Any use or access by anyone under the age of 13
+          is prohibited, and certain regions and Content Offerings may have
+          additional requirements and/or restrictions.
+        </p>
+        <br />
+        <h3>Our License to You</h3>
+        <p>
+          Subject to these Terms and our policies (including the Acceptable Use
+          Policy, Honor Code, and course-specific eligibility requirements, and
+          other terms), we grant you a limited, personal, non-exclusive,
+          non-transferable, and revocable license to use our Services. You may
+          download content from our Services only for your personal,
+          non-commercial use, unless you obtain Coursera's written permission to
+          otherwise use the content. You also agree that you will create,
+          access, and/or use only one user account, unless expressly permitted
+          by Coursera, and you will not share with any third party access to or
+          access information for your account. Using our Services does not give
+          you ownership of any intellectual property rights in our Services or
+          the content you access.
+        </p>
+        <br />
+        <h3>User Content</h3>
+        <p>
+          The Services enable you to share your content, such as homework,
+          quizzes, exams, projects, other assignments you submit, posts you make
+          in the forums, and the like ("User Content"), with Coursera,
+          instructors, and/or other users. You retain all intellectual property
+          rights in, and are responsible for, the User Content you share. User
+          Content does not include course content or other materials made
+          available on or placed on to the Coursera platform by or on behalf of
+          Coursera’s Content Providers or their instructors using the Services,
+          the Content Offerings; as between Coursera and its Content Providers,
+          such Content Offerings are governed by the relevant agreements in
+          place between Coursera and its Content Providers.
+        </p>
+        <br />
+        <h3>How Coursera and Others May Use User Content</h3>
+        <p>
+          The Services enable you to share your content, such as homework,
+          quizzes, exams, projects, other assignments you submit, posts you make
+          in the forums, and the like ("User Content"), with Coursera,
+          instructors, and/or other users. You retain all intellectual property
+          rights in, and are responsible for, the User Content you share. User
+          Content does not include course content or other materials made
+          available on or placed on to the Coursera platform by or on behalf of
+          Coursera’s Content Providers or their instructors using the Services,
+          the Content Offerings; as between Coursera and its Content Providers,
+          such Content Offerings are governed by the relevant agreements in
+          place between Coursera and its Content Providers.
+        </p>
+        <br />
+        <h3>Feedback</h3>
+        <p>
+          The Services enable you to share your content, such as homework,
+          quizzes, exams, projects, other assignments you submit, posts you make
+          in the forums, and the like ("User Content"), with Coursera,
+          instructors, and/or other users. You retain all intellectual property
+          rights in, and are responsible for, the User Content you share. User
+          Content does not include course content or other materials made
+          available on or placed on to the Coursera platform by or on behalf of
+          Coursera’s Content Providers or their instructors using the Services,
+          the Content Offerings; as between Coursera and its Content Providers,
+          such Content Offerings are governed by the relevant agreements in
+          place between Coursera and its Content Providers.
+        </p>
+        <br />
+        <h3>Security</h3>
+        <p>
+          We care about the security of our users. While we work to protect the
+          security of your account and related information, Coursera cannot
+          guarantee that unauthorized third parties will not be able to defeat
+          our security measures. Please notify us immediately of any compromise
+          or unauthorized use of your account by emailing security@coursera.org.
+        </p>
+      </section>
+    </main>
+    <footer class="text-white">
+      <section class="row py-4 p-md-5 p-2 position-relative bg-primary">
+        <div class="col-12 col-md-3">
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/logo-white.png"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/left-intersect.svg"
+            class="position-absolute d-none d-md-block"
+            style="left: 0; bottom: 0; height: calc(100% - 3rem)"
+          />
+        </div>
+        <div class="col-12 col-md-6 order-1 order-md-0">
+          <div class="row">
+            <div class="col-6 col-md">
+              <h6>Company</h6>
+              <ul class="list-unstyled text-small footer-links">
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Contact</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Careers</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Terms & Conditions</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Privacy Policy</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md">
+              <h6>For Students</h6>
+              <ul class="list-unstyled text-small footer-links">
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Courses</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Universities</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#">Blog</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md">
+              <h6>For Universities</h6>
+              <ul class="list-unstyled text-small footer-links">
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Become a Partner</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Request an Update</a
+                  >
+                </li>
+                <li>
+                  <a class="text-reset text-decoration-none" href="#"
+                    >Customer Support</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div
+              class="col-6 d-flex justify-content-around d-md-none align-items-start"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/facebook.svg"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/twitter.svg"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/youtube.svg"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/instagram.svg"
+              />
+            </div>
+            <div class="col-12 d-block d-md-none">
+              <div class="btn-group">
+                <button
+                  type="button"
+                  class="btn text-white dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/kenya.svg"
+                  />
+                  Kenya
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><img
+                        src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/kenya.svg"
+                      />
+                      Kenya</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md order-0 order-md-1">
+          <h6>Stay Updated</h6>
+          <div class="input-group input-group-lg mb-3">
+            <input
+              style="font-size: 14px"
+              class="form-control p-4 border-0"
+              placeholder="Stay in the loop  - drop us your email"
+              aria-label="Stay in the loop  - drop us your email"
+              aria-describedby="basic-addon2"
+            />
+            <span class="input-group-text pr-4 bg-white" id="basic-addon2"
+              ><button class="btn btn-primary">Subscribe</button></span
+            >
+          </div>
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/right-intersect.svg"
+            class="position-absolute d-none d-md-block"
+            style="right: 0; top: 0; height: calc(100% - 6rem)"
+          />
+        </div>
+      </section>
+      <section
+        class="row align-items-center w-100 mx-auto py-2"
+        style="background-color: var(--dark)"
+      >
+        <div class="col col-md-2 d-none d-md-block">
+          <div class="btn-group">
+            <button
+              type="button"
+              class="btn text-white dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/kenya.svg"
+              />
+              Kenya
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/kenya.svg"
+                  />
+                  Kenya</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-md text-center text-md-start">
+          &copy; Copyright 2020 | All Rights Reserved
+        </div>
+        <div
+          class="col col-md-3 col-lg-2 d-md-flex justify-content-around d-none"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/facebook.svg"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/twitter.svg"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/youtube.svg"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/instagram.svg"
+          />
+        </div>
+      </section>
+    </footer>
+    <ul class="navbar-nav h-100 p-4" id="navbarSupportedContent">
+      <li class="nav-item">
+        <a class="nav-link text-reset" href="#">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-reset" href="#">Universities</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link text-reset dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Company
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Company</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-reset" href="#">Partner with us</a>
+      </li>
+      <button class="btn d-lg-inline-block d-none">
+        <img
+          src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/search.svg"
+        />
+      </button>
+      <button class="btn btn-primary d-lg-inline-block d-none">
+        Apply Now
+      </button>
+      <li class="nav-item d-flex align-items-center">
+        <div class="btn text-primary">
+          <img
+            src="https://cdn.jsdelivr.net/gh/BossBele/craydle@latest/images/phone.svg"
+          />
+        </div>
+        <div>
+          <small>Call us 24/7</small>
+          <h5>+254 700 000 000</h5>
+        </div>
+      </li>
+    </ul>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document
+        .querySelector("#menu-toggle")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector("body").classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>
